@@ -29,24 +29,19 @@ const MainNav = () => {
       active: pathname === "/",
     },
     {
-      href: "/features",
-      label: "Features",
-      active: pathname === "/features",
-    },
-    {
       href: "/about",
       label: "About",
       active: pathname === "/about",
     },
     {
-      href: "/services",
-      label: "Services",
-      active: pathname === "/services",
-    },
-    {
       href: "/pricing",
       label: "Pricing",
       active: pathname === "/pricing",
+    },
+    {
+      href: "/contact",
+      label: "Contact",
+      active: pathname === "/contact",
     },
   ]
 

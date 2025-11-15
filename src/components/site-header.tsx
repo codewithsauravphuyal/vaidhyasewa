@@ -38,21 +38,13 @@ export function SiteHeader() {
     )}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <div className="flex-1">
+          <div className="flex-1 mr-8">
             <MainNav />
           </div>
           
-          <div className="hidden md:flex items-center space-x-4">
-            <Button asChild variant="ghost" className={cn(
-              'text-base font-medium',
-              scrolled 
-                ? 'text-gray-700 hover:text-teal-600' 
-                : 'text-white hover:bg-white/10 hover:text-white'
-            )}>
-              <Link href="/login">Login</Link>
-            </Button>
+          <div className="hidden md:flex items-center space-x-6">
             <Button asChild className="bg-teal-600 text-white hover:bg-teal-700 font-semibold text-base">
-              <Link href="/get-started">Get Started</Link>
+              <Link href="/login">Login</Link>
             </Button>
           </div>
 
@@ -60,7 +52,14 @@ export function SiteHeader() {
           <div className="md:hidden">
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className={cn(
+                    "hover:bg-white/10",
+                    scrolled ? "text-teal-700" : "text-white"
+                  )}
+                >
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
@@ -71,11 +70,10 @@ export function SiteHeader() {
                 </SheetHeader>
                 <nav className="flex flex-col space-y-4 mt-8">
                   {[
-                    { href: "/", label: "Home" },
-                    { href: "/features", label: "Features" },
                     { href: "/about", label: "About" },
-                    { href: "/services", label: "Services" },
+                    { href: "/blog", label: "Blog" },
                     { href: "/pricing", label: "Pricing" },
+                    { href: "/contact", label: "Contact" },
                   ].map((item) => (
                     <Link
                       key={item.href}
@@ -92,14 +90,9 @@ export function SiteHeader() {
                     </Link>
                   ))}
                   <div className="pt-4 mt-4 border-t space-y-3">
-                    <Button variant="outline" className="w-full" asChild>
+                    <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white" asChild>
                       <Link href="/login" onClick={() => setOpen(false)}>
                         Login
-                      </Link>
-                    </Button>
-                    <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white" asChild>
-                      <Link href="/get-started" onClick={() => setOpen(false)}>
-                        Get Started
                       </Link>
                     </Button>
                   </div>

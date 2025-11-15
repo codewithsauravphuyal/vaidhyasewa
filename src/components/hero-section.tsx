@@ -25,13 +25,13 @@ export function HeroSection() {
       <div className="relative z-10 container mx-auto px-4 md:px-2 py-20 md:py-32">
         <div className="grid gap-8 md:grid-cols-2 md:gap-12 items-center">
           <div className="space-y-6">
-            <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg">
+            <p className="text-white md:text-blue_A400 font-medium text-sm md:text-base lg:text-lg">
               We are the best
             </p>
             <div className="relative">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-bluegray_900 leading-tight">
                 We Provide Complete{" "}
-                <span className="text-teal_400">Hospital Management</span>
+                <span className="text-teal_700">Hospital Management</span>
               </h1>
               <div className="relative w-full mt-2">
                 <Image
@@ -45,7 +45,7 @@ export function HeroSection() {
 
               </div>
             </div>
-            <p className="text-base md:text-lg text-bluegray_700 max-w-lg leading-relaxed">
+            <p className="text-base md:text-lg text-white md:text-bluegray_700 leading-relaxed">
               Manage your hospital efficiently and easily. A comprehensive hospital management system designed for clinics and hospitals of all sizes. Streamline operations, improve patient care, and boost efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -71,13 +71,13 @@ export function HeroSection() {
           </div>
           <div className="relative">
             <div className="relative p-2">
-              <div className="bg-black_900 rounded-t-[22px] max-w-[500px] mx-auto rounded-b-0 p-4">
+              <div className="bg-black_900 rounded-t-[22px] max-w-[250px] sm:max-w-[250px] md:max-w-[500px] mx-auto rounded-b-0 p-2 md:p-3">
                 <Image
                   src="/images/vaidhyasewadashboard.png"
                   alt="Dashboard Preview"
                   width={400}
                   height={367}
-                  className="w-full h-auto rounded-lg max-w-[500px] mx-auto"
+                  className="w-full h-auto rounded-lg max-w-[250px] sm:max-w-[250px] md:max-w-[500px] mx-auto"
                   unoptimized
                 />
               </div>
@@ -90,7 +90,7 @@ export function HeroSection() {
                 unoptimized
               />
             </div>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[7px] bg-black_900 blur-[44px] rounded-full opacity-50"></div>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] sm:w-[80%] md:w-[90%] h-[7px] bg-black_900 blur-[30px] md:blur-[44px] rounded-full opacity-50"></div>
           </div>
         </div>
       </div>

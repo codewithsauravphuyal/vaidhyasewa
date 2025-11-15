@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, User, FlaskConical, Users, Pill, Scan, UserCheck, CheckCircle2, Shield, Zap, BarChart3, Clock, Star, TrendingUp, Award } from "lucide-react";
 import { HeroSection } from "@/components/hero-section";
+import { TestimonialsCarousel } from "@/components/testimonials-carousel";
 
 export const metadata = {
   title: "Vaidhya Sewa - Modern Hospital Management System",
@@ -163,6 +164,30 @@ const testimonials = [
     hospital: "Sunrise Clinic",
     image: "/images/img_ellipse70_2.png",
     text: "The best investment we made for our hospital. Streamlined operations, better patient care, and excellent customer support.",
+    rating: 5,
+  },
+  {
+    name: "Anil Thapa",
+    role: "IT Manager",
+    hospital: "Everest Care Hospital",
+    image: "/images/img_ellipse70.png",
+    text: "Easy to use and perfectly fits our workflow. The support team is very responsive and helpful.",
+    rating: 5,
+  },
+  {
+    name: "Dr. Meera Shrestha",
+    role: "Medical Director",
+    hospital: "Green Valley Clinic",
+    image: "/images/img_ellipse70_1.png",
+    text: "We now have clear visibility into every department. Reporting and billing have become much smoother.",
+    rating: 5,
+  },
+  {
+    name: "Ramesh Karki",
+    role: "Administrator",
+    hospital: "Himalayan Health Center",
+    image: "/images/img_ellipse70_2.png",
+    text: "Implementation was quick and the team guided us throughout. Highly recommended for any clinic or hospital.",
     rating: 5,
   },
 ];
@@ -337,13 +362,13 @@ export default function Home() {
               </div>
               <div className="relative">
                 <div className="relative p-2">
-                  <div className="bg-black_900 rounded-t-[22px] max-w-[500px] mx-auto rounded-b-0 p-4">
+                  <div className="bg-black_900 rounded-t-[22px] max-w-[250px] sm:max-w-[250px] md:max-w-[500px] mx-auto rounded-b-0 p-2 md:p-3">
                     <Image
                       src="/images/vaidhyasewadashboard.png"
                       alt="Dashboard Preview"
                       width={400}
                       height={367}
-                      className="w-full h-auto rounded-lg max-w-[500px] mx-auto"
+                      className="w-full h-auto rounded-lg max-w-[250px] sm:max-w-[250px] md:max-w-[500px] mx-auto"
                       unoptimized
                     />
                   </div>
@@ -356,7 +381,7 @@ export default function Home() {
                     unoptimized
                   />
                 </div>
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[7px] bg-black_900 blur-[44px] rounded-full opacity-50"></div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] sm:w-[80%] md:w-[90%] h-[7px] bg-black_900 blur-[30px] md:blur-[44px] rounded-full opacity-50"></div>
               </div>
             </div>
             <div className="lg:order-2">
@@ -428,37 +453,7 @@ export default function Home() {
               Hear from hospitals and clinics that have transformed their operations with Vaidhya Sewa.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {testimonials.map((testimonial, idx) => (
-              <div key={idx} className="bg-white_A700 rounded-xl shadow-bs10 p-6 md:p-8 relative border border-gray_100">
-                <div className="absolute -top-8 left-6">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    width={61}
-                    height={61}
-                    className="rounded-full border-4 border-white_A700"
-                    unoptimized
-                  />
-                </div>
-                <div className="pt-8">
-                  <div className="flex items-center gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-amber_700 text-amber_700" />
-                    ))}
-                  </div>
-                  <p className="text-base text-bluegray_500 mb-6 leading-relaxed">
-                    "{testimonial.text}"
-                  </p>
-                  <div>
-                    <p className="text-lg font-semibold text-bluegray_900">{testimonial.name}</p>
-                    <p className="text-sm text-bluegray_500">{testimonial.role}</p>
-                    <p className="text-sm text-teal_700 font-medium">{testimonial.hospital}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 
@@ -708,36 +703,36 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-6">
+      <section className="relative py-16 md:py-20 lg:py-28 overflow-hidden">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           {/* Background Card with Left-Aligned Text Inside */}
-          <div className="absolute bottom-0 inset-x-0 h-[400px] bg-bluegray_50/70 rounded-3xl flex items-center pl-6 pr-12">
+          <div className="relative lg:absolute lg:bottom-0 lg:inset-x-0 lg:h-[400px] bg-bluegray_50/70 rounded-3xl flex items-center px-6 md:px-10 lg:pl-6 lg:pr-12 py-10 md:py-12">
             <div className="flex flex-col items-start max-w-xl w-full">
-              <h1 className="font-bold text-bluegray_900 text-5xl md:text-6xl leading-tight">
+              <h1 className="font-bold text-bluegray_900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
                 Get started for free
               </h1>
-              <p className="mt-6 text-bluegray_500 text-xl md:text-2xl leading-relaxed">
+              <p className="mt-4 md:mt-6 text-bluegray_500 text-lg md:text-xl lg:text-2xl leading-relaxed">
                 Turn your business ideas into incredible reality
               </p>
-              <div className="flex flex-row gap-4 mt-8">
-                <Button asChild className="bg-teal_400 text-white px-8 py-4 rounded-md font-semibold text-lg">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 mt-6 md:mt-8">
+                <Button asChild className="bg-teal_400 text-white px-8 py-4 rounded-md font-semibold text-base md:text-lg">
                   <Link href="/signup">Start 30 day trial</Link>
                 </Button>
-                <Button asChild className="bg-teal_400 text-white px-8 py-4 rounded-md font-semibold text-lg">
+                <Button asChild className="bg-teal_400 text-white px-8 py-4 rounded-md font-semibold text-base md:text-lg">
                   <Link href="/demo">View Demo</Link>
                 </Button>
               </div>
             </div>
           </div>
           {/* Right Image - Stays in place */}
-          <div className="relative flex flex-col lg:flex-row items-center justify-end gap-10 pt-20 lg:pt-0">
+          <div className="relative flex flex-col lg:flex-row items-center justify-end gap-10 pt-10 md:pt-16 lg:pt-0">
             <div className="hidden lg:block w-full lg:w-auto" /> {/* Spacer for left side on lg */}
             <Image
               src="/images/img_youngbusiness.png"
               alt="youngbusiness"
               width={500}
               height={500}
-              className="w-full max-w-sm lg:max-w-md object-contain"
+              className="w-full max-w-xs sm:max-w-sm lg:max-w-md object-contain"
             />
           </div>
         </div>

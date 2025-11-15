@@ -53,9 +53,7 @@ export default function RootLayout({
           >
             <div className="relative flex min-h-screen flex-col">
               <div className="relative z-10">
-                <SiteHeader />
-                <main className="flex-1">{children}</main>
-                <SiteFooter />
+                {children}
               </div>
               <Toaster />
             </div>

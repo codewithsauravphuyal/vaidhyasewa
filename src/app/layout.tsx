@@ -52,9 +52,9 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <div className="relative flex min-h-screen flex-col">
-              <div className="relative z-10">
-                {children}
-              </div>
+              <SiteHeader />
+              <main className="flex-1">{children}</main>
+              <SiteFooter />
               <Toaster />
             </div>
           </ThemeProvider>

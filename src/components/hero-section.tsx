@@ -17,7 +17,6 @@ export function HeroSection() {
           className="absolute right-0 h-full w-auto object-cover"
           unoptimized
         />
-        <div className="absolute bg-blue_A400 bottom-[35%] left-[45%] h-[14px] w-[14px] rounded-full"></div>
         <div className="absolute bg-green_500 left-[42%] top-[21%] h-[14px] w-[14px] rounded-full"></div>
         <div className="absolute backdrop-opacity-[0.5] bg-amber_700 blur-[450px] left-0 top-0 h-[187px] w-[12%] rounded-full opacity-20"></div>
       </div>
@@ -72,13 +71,13 @@ export function HeroSection() {
           </div>
           <div className="relative">
             <div className="relative p-2">
-              <div className="bg-black_900 rounded-t-[22px] rounded-b-0 p-4">
+              <div className="bg-black_900 rounded-t-[22px] max-w-[500px] mx-auto rounded-b-0 p-4">
                 <Image
                   src="/images/vaidhyasewadashboard.png"
                   alt="Dashboard Preview"
                   width={400}
                   height={367}
-                  className="w-full h-auto rounded-lg"
+                  className="w-full h-auto rounded-lg max-w-[500px] mx-auto"
                   unoptimized
                 />
               </div>
@@ -94,18 +93,6 @@ export function HeroSection() {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[7px] bg-black_900 blur-[44px] rounded-full opacity-50"></div>
           </div>
         </div>
-      </div>
-
-      {/* Partners */}
-      <div className="relative z-10 container mx-auto px-4 md:px-6 pb-8">
-        <Image
-          src="/images/img_partners.svg"
-          alt="Partners"
-          width={800}
-          height={40}
-          className="w-full h-auto"
-          unoptimized
-        />
       </div>
     </section>
   )

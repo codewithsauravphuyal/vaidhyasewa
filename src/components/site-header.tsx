@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
 import { Menu } from "lucide-react"
@@ -16,76 +16,89 @@ import {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : ''
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled)
+      }
+    }
+    
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [scrolled])
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white_A700/95 backdrop-blur-sm border-b border-gray_100">
-      <div className="container flex h-16 items-center">
-        <div className="flex flex-1 items-center justify-between">
-          <MainNav />
-          <div className="flex items-center space-x-4">
-            <nav className="hidden md:flex items-center space-x-2">
-              <Button variant="ghost" asChild className="text-bluegray_900 hover:text-teal_700">
-                <Link href="/login">Login</Link>
-              </Button>
-              <Button asChild className="bg-teal_700 text-white_A700 hover:bg-teal_700/90 font-semibold shadow-md">
-                <Link href="/contact">Get Started</Link>
-              </Button>
-            </nav>
+    <header className={cn(
+      "fixed w-full z-50 py-4 transition-all duration-300",
+      scrolled ? "bg-white shadow-md" : "bg-transparent"
+    )}>
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between">
+          <div className="flex-1">
+            <MainNav />
+          </div>
+          
+          <div className="hidden md:flex items-center space-x-4">
+            <Button asChild variant="ghost" className={cn(
+              'text-base font-medium',
+              scrolled 
+                ? 'text-gray-700 hover:text-teal-600' 
+                : 'text-white hover:bg-white/10 hover:text-white'
+            )}>
+              <Link href="/login">Login</Link>
+            </Button>
+            <Button asChild className="bg-teal-600 text-white hover:bg-teal-700 font-semibold text-base">
+              <Link href="/get-started">Get Started</Link>
+            </Button>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden text-bluegray_900">
-                  <Menu className="h-5 w-5" />
+                <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                  <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white">
                 <SheetHeader>
-                  <SheetTitle>Menu</SheetTitle>
+                  <SheetTitle className="text-left">Menu</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col space-y-4 mt-8">
-                  <Link
-                    href="/"
-                    className="text-sm font-medium transition-colors hover:text-teal_700"
-                    onClick={() => setOpen(false)}
-                  >
-                    Home
-                  </Link>
-                  <Link
-                    href="/features"
-                    className="text-sm font-medium transition-colors hover:text-teal_700"
-                    onClick={() => setOpen(false)}
-                  >
-                    Features
-                  </Link>
-                  <Link
-                    href="/about"
-                    className="text-sm font-medium transition-colors hover:text-teal_700"
-                    onClick={() => setOpen(false)}
-                  >
-                    About
-                  </Link>
-                  <Link
-                    href="/demo"
-                    className="text-sm font-medium transition-colors hover:text-teal_700"
-                    onClick={() => setOpen(false)}
-                  >
-                    Services
-                  </Link>
-                  <Link
-                    href="/pricing"
-                    className="text-sm font-medium transition-colors hover:text-teal_700"
-                    onClick={() => setOpen(false)}
-                  >
-                    Pricing
-                  </Link>
-                  <div className="pt-4 border-t space-y-2">
-                    <Button variant="ghost" asChild className="w-full justify-start">
+                  {[
+                    { href: "/", label: "Home" },
+                    { href: "/features", label: "Features" },
+                    { href: "/about", label: "About" },
+                    { href: "/services", label: "Services" },
+                    { href: "/pricing", label: "Pricing" },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={cn(
+                        "text-base font-medium py-2 px-4 rounded-md transition-colors",
+                        pathname === item.href
+                          ? "bg-teal-50 text-teal-700"
+                          : "text-gray-700 hover:bg-gray-50"
+                      )}
+                      onClick={() => setOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                  <div className="pt-4 mt-4 border-t space-y-3">
+                    <Button variant="outline" className="w-full" asChild>
                       <Link href="/login" onClick={() => setOpen(false)}>
                         Login
                       </Link>
                     </Button>
-                    <Button asChild className="w-full bg-teal_700 text-white_A700">
-                      <Link href="/contact" onClick={() => setOpen(false)}>
+                    <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white" asChild>
+                      <Link href="/get-started" onClick={() => setOpen(false)}>
                         Get Started
                       </Link>
                     </Button>

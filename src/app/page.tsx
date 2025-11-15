@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { HeroSection } from "@/components/hero-section";
 
 export const metadata = {
   title: "Vaidhya Sewa - Modern Hospital Management System",
@@ -16,108 +17,8 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="w-full bg-white_A700 font-poppins">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] lg:min-h-[850px]">
-        {/* Background with gradient and shapes */}
-        <div className="absolute inset-0">
-          <div className="absolute backdrop-opacity-[0.3] bg-amber_700 blur-[590px] bottom-[5%] right-[0] h-[272px] w-[14%] rounded-full opacity-30"></div>
-          <Image
-            src="/images/img_vector65.svg"
-            alt="background"
-            width={1440}
-            height={850}
-            className="absolute right-0 h-full w-[61%] object-contain"
-            unoptimized
-          />
-          <div className="absolute bg-blue_A400 bottom-[35%] left-[45%] h-[14px] w-[14px] rounded-full"></div>
-          <div className="absolute bg-green_500 left-[42%] top-[21%] h-[14px] w-[14px] rounded-full"></div>
-          <div className="absolute backdrop-opacity-[0.5] bg-amber_700 blur-[450px] left-0 top-0 h-[187px] w-[12%] rounded-full opacity-20"></div>
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 md:px-6 py-20 md:py-32">
-          <div className="grid gap-8 md:grid-cols-2 md:gap-12 items-center">
-            <div className="space-y-6">
-              <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg">
-                We are the best
-              </p>
-              <div className="relative">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-bluegray_900 leading-tight">
-                  We provide full-stack{" "}
-                  <span className="text-teal_400">Hospital Management Solution</span>
-                </h1>
-                <Image
-                  src="/images/img_vector.svg"
-                  alt="underline"
-                  width={200}
-                  height={71}
-                  className="absolute bottom-0 left-[25%] h-auto w-[28%]"
-                  unoptimized
-                />
-              </div>
-              <p className="text-base md:text-lg text-bluegray_700 max-w-lg leading-relaxed">
-                Manage your hospital efficiently and easily. A comprehensive hospital management system designed for clinics and hospitals of all sizes. Streamline operations, improve patient care, and boost efficiency.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-teal_700 hover:bg-teal_700/90 text-white_A700 font-semibold shadow-md">
-                  <Link href="/contact">
-                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="border-teal_400 text-teal_400 hover:bg-teal_400/10">
-                  <Link href="/demo" className="flex items-center">
-                    <Image
-                      src="/images/img_polygon1.png"
-                      alt="play"
-                      width={18}
-                      height={18}
-                      className="mr-2"
-                      unoptimized
-                    />
-                    Watch Video
-                  </Link>
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="relative bg-gray-900 border-2 border-gray-700 rounded-t-[28px] rounded-b-[4px] p-2">
-                <div className="bg-black_900 rounded-t-[22px] rounded-b-0 p-4">
-                  <Image
-                    src="/images/img_imageprocessin.png"
-                    alt="Dashboard Preview"
-                    width={400}
-                    height={367}
-                    className="w-full h-auto rounded-lg"
-                    unoptimized
-                  />
-                </div>
-                <Image
-                  src="/images/img_bottom.png"
-                  alt="bottom"
-                  width={400}
-                  height={21}
-                  className="w-full h-auto"
-                  unoptimized
-                />
-              </div>
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[7px] bg-black_900 blur-[44px] rounded-full opacity-50"></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Partners */}
-        <div className="relative z-10 container mx-auto px-4 md:px-6 pb-8">
-          <Image
-            src="/images/img_partners.svg"
-            alt="Partners"
-            width={800}
-            height={40}
-            className="w-full h-auto"
-            unoptimized
-          />
-        </div>
-      </section>
-
+      {/* hero section */}
+      <HeroSection />
       {/* Features Section */}
       <section className="relative py-16 md:py-24 bg-bluegray_50 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
@@ -172,8 +73,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Introducing Section */}
+      {/* statistics card section */}
       <section className="relative py-16 md:py-24 bg-white_A700 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -233,43 +133,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Statistics Card Section */}
+      {/* How It Works Section */}
       <section className="relative py-16 md:py-24 bg-white_A700 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="bg-white_A700 rounded-lg shadow-bs4 p-8 md:p-12 max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="relative inline-block mb-4">
-                  <Image
-                    src="/images/img_union.svg"
-                    alt="stat"
-                    width={84}
-                    height={84}
-                    className="w-full h-auto"
-                    unoptimized
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-2xl md:text-3xl font-bold text-teal_700">3,923</p>
-                  </div>
+          <div className="text-center mb-12">
+            <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg mb-4">
+              How It Works
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-[36px] font-semibold text-bluegray_900 mb-4">
+              Simple Steps to Get Started
+            </h2>
+            <p className="text-base md:text-lg text-bluegray_500 max-w-2xl mx-auto">
+              Get started with Vaidhya Sewa in just a few simple steps and transform your hospital management experience.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            {[
+              {
+                number: '01',
+                title: 'Sign Up & Onboarding',
+                description: 'Create your account and complete the quick onboarding process to set up your hospital profile.'
+              },
+              {
+                number: '02',
+                title: 'Customize Your Setup',
+                description: 'Configure the system according to your hospital\'s specific needs and requirements.'
+              },
+              {
+                number: '03',
+                title: 'Go Live & Train Staff',
+                description: 'Launch the system and train your staff with our comprehensive training materials.'
+              }
+            ].map((step, index) => (
+              <div key={index} className="bg-white_A700 rounded-lg shadow-bs2 p-8 text-center">
+                <div className="w-16 h-16 bg-teal_50 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-2xl font-bold text-teal_700">{step.number}</span>
                 </div>
-                <p className="text-sm md:text-base text-bluegray_900 font-medium">Active Users</p>
+                <h3 className="text-xl font-semibold text-bluegray_900 mb-3">{step.title}</h3>
+                <p className="text-bluegray_500 text-sm md:text-base">{step.description}</p>
               </div>
-              <div className="text-center">
-                <p className="text-2xl md:text-3xl font-bold text-bluegray_900 mb-2">500+</p>
-                <p className="text-sm md:text-base text-bluegray_500">Hospitals</p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl md:text-3xl font-bold text-bluegray_900 mb-2">50K+</p>
-                <p className="text-sm md:text-base text-bluegray_500">Daily Users</p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl md:text-3xl font-bold text-bluegray_900 mb-2">99.9%</p>
-                <p className="text-sm md:text-base text-bluegray_500">Uptime</p>
-              </div>
-            </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Button asChild size="lg" className="bg-teal_700 hover:bg-teal_700/90 text-white_A700 font-semibold shadow-md">
+              <Link href="/demo">
+                Get Started Now <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
+
+
 
       {/* Team Management Section */}
       <section className="relative py-16 md:py-24 bg-bluegray_50 overflow-hidden">
@@ -489,11 +406,16 @@ export default function Home() {
               </Button>
             </div>
             <div className="relative">
-              <div className="bg-gray-900 border-2 border-gray-700 rounded-t-[28px] rounded-b-[4px] p-2">
+              <div className="p-2">
                 <div className="bg-black_900 rounded-t-[22px] rounded-b-0 p-4">
-                  <div className="bg-white_A700 rounded-lg p-4 aspect-video flex items-center justify-center">
-                    <p className="text-gray_800 font-bold text-center">Schedule Dashboard Preview</p>
-                  </div>
+                    <Image
+                      src="/images/homevaidhya.png"
+                      alt="Dashboard Preview"
+                      width={400}
+                      height={367}
+                      className="w-full h-auto rounded-lg"
+                      unoptimized
+                    />
                 </div>
                 <Image
                   src="/images/img_bottom.png"

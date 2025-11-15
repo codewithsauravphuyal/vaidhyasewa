@@ -1,127 +1,148 @@
 "use client";
 
-import { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { Mail } from "lucide-react";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
+  const [manualLoading, setManualLoading] = useState(false);
 
   const handleGoogleSignIn = async () => {
     try {
+      setGoogleLoading(true);
       await signIn("google", { callbackUrl: "/demo" });
     } catch (error) {
       toast.error("Failed to sign in with Google");
+    } finally {
+      setGoogleLoading(false);
     }
   };
 
-  const handleEmailSignIn = async (e: React.FormEvent) => {
+  const handleManualSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     
-    // Demo login logic - in production, this would use NextAuth
-    if (email && password) {
-      toast.success("Demo login successful! Redirecting...");
-      setTimeout(() => {
-        window.location.href = "/demo";
-      }, 1000);
-    } else {
+    if (!email || !password) {
       toast.error("Please enter email and password");
+      return;
     }
-    
-    setLoading(false);
+
+    try {
+      setManualLoading(true);
+      const result = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+
+      if (result?.error) {
+        toast.error("Invalid email or password");
+      } else if (result?.ok) {
+        toast.success("Sign in successful!");
+        window.location.href = "/demo";
+      }
+    } catch (error) {
+      toast.error("Failed to sign in");
+    } finally {
+      setManualLoading(false);
+    }
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-secondary/5">
-      <div className="w-full max-w-md p-8">
-        <div className="bg-white rounded-lg border border-border p-8">
-          <h1 className="text-3xl font-bold text-dark mb-2 text-center">Welcome Back</h1>
-          <p className="text-muted-foreground text-center mb-8">Sign in to your Vaidhya Sewa account</p>
-
-          <div className="space-y-6">
-            <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg text-center">
-              <p className="text-sm text-blue-900">
-                Demo credentials are available on the <Link href="/demo" className="font-semibold hover:underline">Demo page</Link>
-              </p>
-            </div>
-
-            <form onSubmit={handleEmailSignIn} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Email</label>
-                <Input
-                  type="email"
-                  placeholder="your@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Password</label>
-                <Input
-                  type="password"
-                  placeholder="••••••••"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </div>
-
-              <div className="flex items-center justify-between">
-                <label className="flex items-center gap-2">
-                  <input type="checkbox" className="rounded border-border" />
-                  <span className="text-sm text-muted-foreground">Remember me</span>
-                </label>
-                <a href="#" className="text-sm text-primary hover:text-primary/80">
-                  Forgot password?
-                </a>
-              </div>
-
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90" disabled={loading}>
-                {loading ? "Signing in..." : "Sign In"}
-              </Button>
-            </form>
-
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-border"></div>
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-muted-foreground">Or continue with</span>
-              </div>
-            </div>
-
-            <Button variant="outline" className="w-full" onClick={handleGoogleSignIn}>
-              Sign in with Google
-            </Button>
-
-            <p className="text-center text-sm text-muted-foreground">
-              Don't have an account?{" "}
-              <Link href="/contact" className="text-primary hover:text-primary/80 font-semibold">
-                Get started
-              </Link>
-            </p>
+    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-teal_400/10 to-teal_700/10">
+      <div className="w-full max-w-md px-4">
+        {/* Main Card */}
+        <div className="bg-white rounded-2xl shadow-lg border border-teal_400/30 p-8 space-y-8">
+          {/* Header */}
+          <div className="text-center space-y-2">
+            <h1 className="text-3xl font-bold text-teal_700">Welcome to Vaidhya Sewa</h1>
+            <p className="text-gray_700">Sign in to your account</p>
           </div>
+
+          {/* Google OAuth Button */}
+          <Button
+            onClick={handleGoogleSignIn}
+            disabled={googleLoading || manualLoading}
+            variant="outline"
+            className="w-full h-11 border-teal_400 hover:bg-teal_400/5 text-teal_700 font-medium transition-colors"
+          >
+            <Mail className="w-5 h-5 mr-2" />
+            {googleLoading ? "Signing in..." : "Continue with Google"}
+          </Button>
+
+          {/* Divider */}
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-teal_400/20"></div>
+            </div>
+            <div className="relative flex justify-center text-xs">
+              <span className="px-2 bg-white text-gray_700 font-medium">OR</span>
+            </div>
+          </div>
+
+          {/* Manual Login Form */}
+          <form onSubmit={handleManualSignIn} className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-teal_700 mb-2">Email</label>
+              <Input
+                type="email"
+                placeholder="your@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={googleLoading || manualLoading}
+                className="border-teal_400/30 focus:border-teal_400 focus:ring-teal_400"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-teal_700 mb-2">Password</label>
+              <Input
+                type="password"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                disabled={googleLoading || manualLoading}
+                className="border-teal_400/30 focus:border-teal_400 focus:ring-teal_400"
+              />
+            </div>
+
+            <Button
+              type="submit"
+              disabled={googleLoading || manualLoading}
+              className="w-full h-11 bg-teal_400 hover:bg-teal_700 text-white font-medium transition-colors"
+            >
+              {manualLoading ? "Signing in..." : "Sign In"}
+            </Button>
+          </form>
+
+          {/* Sign Up Link */}
+          <p className="text-center text-sm text-gray_700">
+            Don't have an account?{" "}
+            <Link href="/contact" className="text-teal_400 hover:text-teal_700 font-semibold transition-colors">
+              Get started
+            </Link>
+          </p>
         </div>
 
-        <p className="text-center text-xs text-muted-foreground mt-8">
-          Protected by reCAPTCHA and subject to the{" "}
-          <Link href="/privacy" className="hover:underline">
-            Privacy Policy
-          </Link>{" "}
-          and{" "}
-          <Link href="/terms" className="hover:underline">
-            Terms of Service
-          </Link>
-        </p>
+        {/* Footer */}
+        <div className="mt-8 text-center space-y-2">
+          <p className="text-xs text-gray_700">
+            By signing in, you agree to our{" "}
+            <Link href="/terms" className="hover:text-teal_700 underline">
+              Terms of Service
+            </Link>{" "}
+            and{" "}
+            <Link href="/privacy" className="hover:text-teal_700 underline">
+              Privacy Policy
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

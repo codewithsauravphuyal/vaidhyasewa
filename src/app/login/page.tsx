@@ -1,13 +1,43 @@
+"use client";
+
 import { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
-export const metadata: Metadata = {
-  title: "Login - Vaidhya Sewa",
-  description: "Login to your Vaidhya Sewa account",
-};
+import { Input } from "@/components/ui/input";
+import { signIn } from "next-auth/react";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await signIn("google", { callbackUrl: "/demo" });
+    } catch (error) {
+      toast.error("Failed to sign in with Google");
+    }
+  };
+
+  const handleEmailSignIn = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    
+    // Demo login logic - in production, this would use NextAuth
+    if (email && password) {
+      toast.success("Demo login successful! Redirecting...");
+      setTimeout(() => {
+        window.location.href = "/demo";
+      }, 1000);
+    } else {
+      toast.error("Please enter email and password");
+    }
+    
+    setLoading(false);
+  };
+
   return (
     <div className="w-full min-h-screen flex items-center justify-center bg-secondary/5">
       <div className="w-full max-w-md p-8">
@@ -22,22 +52,26 @@ export default function LoginPage() {
               </p>
             </div>
 
-            <div className="space-y-4">
+            <form onSubmit={handleEmailSignIn} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">Email</label>
-                <input
+                <Input
                   type="email"
                   placeholder="your@email.com"
-                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">Password</label>
-                <input
+                <Input
                   type="password"
                   placeholder="••••••••"
-                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
               </div>
 
@@ -51,8 +85,10 @@ export default function LoginPage() {
                 </a>
               </div>
 
-              <Button className="w-full bg-primary hover:bg-primary/90">Sign In</Button>
-            </div>
+              <Button type="submit" className="w-full bg-primary hover:bg-primary/90" disabled={loading}>
+                {loading ? "Signing in..." : "Sign In"}
+              </Button>
+            </form>
 
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
@@ -63,7 +99,7 @@ export default function LoginPage() {
               </div>
             </div>
 
-            <Button variant="outline" className="w-full">
+            <Button variant="outline" className="w-full" onClick={handleGoogleSignIn}>
               Sign in with Google
             </Button>
 

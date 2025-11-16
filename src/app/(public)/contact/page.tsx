@@ -46,6 +46,13 @@ const ContactPage = () => {
     }
   };
 
+  const HeroData = {
+    subtitle: "Contact Us",
+    title: "Get in Touch with",
+    title_2: "Vaidhya Sewa",
+    description: ["Have questions? We'd love to hear from you.", "Send us a message and we'll respond as soon as possible."],
+  };
+
   const contactInfo = [
     {
       icon: Mail,
@@ -125,12 +132,7 @@ const ContactPage = () => {
     },
   ];
 
-const HeroData = {
-  subtitle: "Contact Us",
-  title: "Get in Touch with",
-  title_2: "Vaidhya Sewa",
-  description: ["Have questions? We'd love to hear from you.", "Send us a message and we'll respond as soon as possible."],
-};
+
 
   return (
     <div className="w-full">

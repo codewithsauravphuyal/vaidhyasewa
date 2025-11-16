@@ -3,10 +3,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import CTA from "@/components/cta_section";
+import { Herosection } from "@/components/hero_section";
 
 export const metadata: Metadata = {
   title: "Pricing - Vaidhya Sewa",
   description: "Flexible pricing plans for hospitals and clinics of all sizes",
+};
+
+const HeroData = {
+  subtitle: "Pricing Plans",
+  title: "Our",
+  title_2: "Pricing & Plans",
+  description: ["Choose the perfect plan for your hospital. All plans include 30-day free trial."],
 };
 
 const allFeatures = [
@@ -147,32 +155,7 @@ const plans = [
 export default function PricingPage() {
   return (
     <div className="w-full bg-white_A700">
-      <section
-        className="relative py-15 md:py-32 overflow-hidden bg-white_A700"
-        style={{
-          backgroundImage: 'url(/images/vaidhya_header.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center right',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="relative z-10 max-w-4xl">
-            <div className="text-left">
-              <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg mb-4">
-                Pricing Plans
-              </p>
-              <h1 className="text-3xl md:text-4xl lg:text-[36px] font-semibold text-bluegray_900 mb-4">
-                Our {" "}
-                <span className="text-teal_700">Pricing & Plans</span>
-              </h1>
-              <p className="text-base md:text-lg text-bluegray_500">
-               Choose the perfect plan for your hospital. All plans include 30-day free trial.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Herosection {...HeroData} />
 
       <section className="relative py-20 md:py-28 bg-bluegray_50 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">

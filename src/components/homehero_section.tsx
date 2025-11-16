@@ -3,7 +3,7 @@ import { Button } from "./ui/button"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 
-export function HeroSection() {
+export function Herohome() {
   return (
     <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] lg:min-h-[850px]">
       {/* Background with gradient and shapes */}

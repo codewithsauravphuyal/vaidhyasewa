@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, User, FlaskConical, Users, Pill, Scan, UserCheck, CheckCircle2, Shield, Zap, BarChart3, Clock, Star, TrendingUp, Award } from "lucide-react";
-import { HeroSection } from "@/components/hero-section";
+import { Herohome } from "@/components/homehero_section";
 import { TestimonialsCarousel } from "@/components/testimonials-carousel";
 import CTA from "@/components/cta_section";
 
@@ -343,7 +343,7 @@ export default function Home() {
   return (
     <div className="w-full bg-white_A700 font-poppins">
       {/* Hero Section */}
-      <HeroSection />
+      <Herohome />
 
       {/* Features Section */}
       <section className="relative py-20 md:py-28 bg-white_A700 overflow-hidden">

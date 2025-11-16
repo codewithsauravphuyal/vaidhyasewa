@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { MessageCircle, Phone, Mail, MapPin, Clock10, CheckCircle, Settings, Link2, UserCheck, Fingerprint, Handshake } from "lucide-react";
 import { toast } from "sonner";
+import { Herosection } from "@/components/hero_section";
 
 const ContactPage = () => {
   const [loading, setLoading] = useState(false);
@@ -134,38 +135,17 @@ const ContactPage = () => {
     },
   ];
 
+const HeroData = {
+  subtitle: "Contact Us",
+  title: "Get in Touch with",
+  title_2: "Vaidhya Sewa",
+  description: ["Have questions? We'd love to hear from you.", "Send us a message and we'll respond as soon as possible."],
+};
+
   return (
     <div className="w-full">
       {/* Hero */}
-      <section
-        className="relative py-15 md:py-32 overflow-hidden bg-white_A700"
-        style={{
-          backgroundImage: 'url(/images/vaidhya_header.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center right',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="relative z-10 max-w-4xl">
-            <div className="text-left">
-              <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg mb-4">
-                Contact Us
-              </p>
-              <h1 className="text-3xl md:text-4xl lg:text-[36px] font-semibold text-bluegray_900 mb-4">
-                Get in Touch with {" "}
-                <span className="text-teal_700">Vaidhya Sewa</span>
-              </h1>
-              <p className="text-base md:text-lg text-bluegray_500">
-                Have questions? We'd love to hear from you.
-                <br />
-                Send us a message and we'll respond as soon as possible.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <Herosection {...HeroData} />
       {/* Contact Section */}
       <section className="py-16 md:py-24 bg-bluegray_50">
         <div className="container mx-auto px-4 md:px-6">
@@ -317,7 +297,7 @@ const ContactPage = () => {
                   <div className="space-y-3">
                     <div className="flex mt-4 sm:mt-0 gap-4 justify-center sm:justify-start">
                       <a href="#" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
-                        <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd" /></svg>
+                        <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clipRule="evenodd" /></svg>
                         <span className="sr-only">Facebook page</span>
                       </a>
                       <a href="#" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">

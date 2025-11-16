@@ -4,10 +4,18 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { User, Calendar, Stethoscope, DollarSign, Package, TestTube, Users, Clock, Shield, Phone, Eye, Leaf, Smartphone, TrendingUp } from "lucide-react";
 import CTA from "@/components/cta_section";
+import { Herosection } from "@/components/hero_section";
 
 export const metadata: Metadata = {
   title: "About - Vaidhya Sewa",
   description: "Discover Vaidhya Sewa's comprehensive platform for hospital management, enabling paperless operations and seamless healthcare delivery",
+};
+
+const HeroData = {
+  subtitle: "About Us",
+  title: "About",
+  title_2: "Vaidhya Sewa",
+  description: ["Transforming healthcare through technology and innovation"],
 };
 
 const values = [
@@ -115,32 +123,7 @@ export default function AboutPage() {
   return (
     <div className="w-full bg-white_A700 font-poppins">
       {/* Hero */}
-      <section
-        className="relative py-15 md:py-32 overflow-hidden bg-white_A700"
-        style={{
-          backgroundImage: 'url(/images/vaidhya_header.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center right',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="relative z-10 max-w-4xl">
-            <div className="text-left">
-              <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg mb-4">
-                About Us
-              </p>
-              <h1 className="text-3xl md:text-4xl lg:text-[36px] font-semibold text-bluegray_900 mb-4">
-                About {" "}
-                <span className="text-teal_700">Vaidhya Sewa</span>
-              </h1>
-              <p className="text-base md:text-lg text-bluegray_500">
-                Transforming healthcare through technology and innovation
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Herosection {...HeroData} />
 
       {/* Mission & Vision */}
       <section className="py-16 md:py-24 bg-bluegray_50">

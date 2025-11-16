@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
@@ -49,9 +50,7 @@ const MainNav = () => {
     <nav className="flex items-center justify-between w-full">
       <Link href="/" className="flex items-center">
         <div className="relative flex items-center">
-          <div className="bg-teal_700 h-8 w-8 md:h-9 md:w-9 rounded"></div>
-          <span className="absolute left-2 font-bold text-white_A700 text-xl md:text-2xl font-inter">V</span>
-          <span className="ml-2 text-xl md:text-2xl font-bold text-bluegray_900 font-inter">aidhya Sewa</span>
+          <Image src="/images/logo.png" alt="logo" width={150} height={150} />
         </div>
       </Link>
       <div className="hidden md:flex items-center space-x-8 ml-8">

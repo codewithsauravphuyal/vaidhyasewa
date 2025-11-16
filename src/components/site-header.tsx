@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
 import { Menu } from "lucide-react"
@@ -17,7 +18,7 @@ import {
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const pathname = typeof window !== 'undefined' ? window.location.pathname : ''
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,19 +58,20 @@ export function SiteHeader() {
                   size="icon"
                   className={cn(
                     "hover:bg-white/10",
-                    scrolled ? "text-teal-700" : "text-white"
+                    scrolled ? "text-teal-700" : "text-teal-700"
                   )}
                 >
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white">
+              <SheetContent side="top" className="bg-white h-[50vh] max-h-[400px]">
                 <SheetHeader>
                   <SheetTitle className="text-left">Menu</SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col space-y-4 mt-8">
+                <nav className="flex flex-col mt-2">
                   {[
+                    { href: "/", label: "Home" },
                     { href: "/about", label: "About" },
                     { href: "/blog", label: "Blog" },
                     { href: "/pricing", label: "Pricing" },
@@ -79,7 +81,7 @@ export function SiteHeader() {
                       key={item.href}
                       href={item.href}
                       className={cn(
-                        "text-base font-medium py-2 px-4 rounded-md transition-colors",
+                        "text-base font-medium py-2 px-4 rounded-md transition-colors block",
                         pathname === item.href
                           ? "bg-teal-50 text-teal-700"
                           : "text-gray-700 hover:bg-gray-50"
@@ -89,7 +91,7 @@ export function SiteHeader() {
                       {item.label}
                     </Link>
                   ))}
-                  <div className="pt-4 mt-4 border-t space-y-3">
+                  <div className="pt-4 border-t space-y-3">
                     <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white" asChild>
                       <Link href="/login" onClick={() => setOpen(false)}>
                         Login

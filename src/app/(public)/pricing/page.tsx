@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import CTA from "@/components/cta_section";
 
 export const metadata: Metadata = {
   title: "Pricing - Vaidhya Sewa",
@@ -145,45 +146,43 @@ const plans = [
 
 export default function PricingPage() {
   return (
-    <div className="w-full bg-white_A700 font-poppins">
-      {/* Pricing Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden min-h-[600px]">
-        {/* Background shapes */}
-        <div className="absolute inset-0 bg-bluegray_50">
-          <Image
-            src="/images/img_shape_12.svg"
-            alt="shape"
-            width={1440}
-            height={730}
-            className="absolute bottom-0 w-full h-auto object-cover"
-            unoptimized
-          />
-        </div>
-
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          {/* Header */}
-          <div className="text-center mb-12 max-w-2xl mx-auto">
-            <div className="inline-block mb-4">
-              <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg">
-                Pricing & Plans
+    <div className="w-full bg-white_A700">
+      <section
+        className="relative py-15 md:py-32 overflow-hidden bg-white_A700"
+        style={{
+          backgroundImage: 'url(/images/vaidhya_header.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center right',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="relative z-10 max-w-4xl">
+            <div className="text-left">
+              <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg mb-4">
+                Pricing Plans
+              </p>
+              <h1 className="text-3xl md:text-4xl lg:text-[36px] font-semibold text-bluegray_900 mb-4">
+                Our {" "}
+                <span className="text-teal_700">Pricing & Plans</span>
+              </h1>
+              <p className="text-base md:text-lg text-bluegray_500">
+               Choose the perfect plan for your hospital. All plans include 30-day free trial.
               </p>
             </div>
-            <div className="relative inline-block w-full">
-              <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-[36px] 3xl:text-[43px] text-bluegray_900 leading-tight">
-                Our pricing plans suits your every need
-              </h1>
-              <Image
-                src="/images/img_rectangle232.svg"
-                alt="underline"
-                width={200}
-                height={6}
-                className="absolute bottom-[28%] right-[1%] w-[51%] h-auto"
-                unoptimized
-              />
-            </div>
           </div>
+        </div>
+      </section>
 
-      {/* Pricing Cards */}
+      <section className="relative py-20 md:py-28 bg-bluegray_50 overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6">
+           <div className="text-center mb-12">
+            <h2 className="text-3xl font-semibold text-bluegray_900 mb-4">Our pricing plans suits your every need</h2>
+            <p className="text-base md:text-lg text-bluegray_500 max-w-2xl mx-auto">
+              Discover tailored pricing options designed to scale with your clinic or hospital. All plans come with a 30-day free trial and seamless onboarding.
+            </p>
+          </div>
+          {/* Pricing Cards */}
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {plans.map((plan, idx) => {
               const planFeatures = allFeatures.map((feature) => ({
@@ -196,21 +195,19 @@ export default function PricingPage() {
               return (
                 <div
                   key={idx}
-                  className={`bg-white_A700 rounded-lg shadow-lg ${
-                    plan.highlighted ? "shadow-xl" : ""
-                  }`}
+                  className={`bg-white_A700 rounded-lg shadow-lg ${plan.highlighted ? "shadow-xl" : ""
+                    }`}
                 >
                   <div className="p-6 lg:p-8">
                     {/* Plan Header */}
                     <div className="mb-6">
                       <p
-                        className={`font-medium text-xs md:text-sm lg:text-base mb-3 opacity-80 ${
-                          plan.color === "teal_400"
-                            ? "text-teal_400"
-                            : plan.color === "amber_700"
+                        className={`font-medium text-xs md:text-sm lg:text-base mb-3 opacity-80 ${plan.color === "teal_400"
+                          ? "text-teal_400"
+                          : plan.color === "amber_700"
                             ? "text-amber_700"
                             : "text-pink_A100"
-                        }`}
+                          }`}
                       >
                         {plan.name}
                       </p>
@@ -228,6 +225,7 @@ export default function PricingPage() {
 
                     {/* Features */}
                     <div className="mb-8">
+                      {/* Included Features */}
                       <div className="space-y-3">
                         {included.map((feature, fidx) => (
                           <div key={fidx} className="flex items-start gap-2">
@@ -244,6 +242,8 @@ export default function PricingPage() {
                             </span>
                           </div>
                         ))}
+
+                        {/* Not Included Features */}
                         {notIncluded.length > 0 &&
                           notIncluded.map((feature, fidx) => (
                             <div key={fidx} className="flex items-start gap-2">
@@ -270,7 +270,7 @@ export default function PricingPage() {
                           asChild
                           className="w-full bg-teal_700 hover:bg-teal_700/90 text-white_A700 font-semibold py-4 rounded-lg shadow-md"
                         >
-                          <Link href="/contact">Buy Now</Link>
+                          <Link href="/signup">Get Started</Link>
                         </Button>
                       ) : (
                         <Button
@@ -278,7 +278,7 @@ export default function PricingPage() {
                           variant="outline"
                           className="w-full border-teal_400 text-teal_400 hover:bg-teal_400/10 font-semibold py-4 rounded-lg"
                         >
-                          <Link href="/contact">Buy Now</Link>
+                          <Link href="/signup">Get Started</Link>
                         </Button>
                       )}
                     </div>
@@ -289,6 +289,9 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
+
+      {/* Final CTA */}
+      <CTA />
     </div>
   );
 }

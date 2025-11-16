@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, User, FlaskConical, Users, Pill, Scan, UserCheck, CheckCircle2, Shield, Zap, BarChart3, Clock, Star, TrendingUp, Award } from "lucide-react";
 import { HeroSection } from "@/components/hero-section";
 import { TestimonialsCarousel } from "@/components/testimonials-carousel";
+import CTA from "@/components/cta_section";
 
 export const metadata = {
   title: "Vaidhya Sewa - Modern Hospital Management System",
@@ -654,7 +655,7 @@ export default function Home() {
                           asChild
                           className="w-full bg-teal_700 hover:bg-teal_700/90 text-white_A700 font-semibold py-4 rounded-lg shadow-md"
                         >
-                          <Link href="/contact">Buy Now</Link>
+                          <Link href="/signup">Get Started</Link>
                         </Button>
                       ) : (
                         <Button
@@ -662,7 +663,7 @@ export default function Home() {
                           variant="outline"
                           className="w-full border-teal_400 text-teal_400 hover:bg-teal_400/10 font-semibold py-4 rounded-lg"
                         >
-                          <Link href="/contact">Buy Now</Link>
+                          <Link href="/signup">Get Started</Link>
                         </Button>
                       )}
                     </div>
@@ -703,40 +704,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative py-16 md:py-20 lg:py-28 overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Background Card with Left-Aligned Text Inside */}
-          <div className="relative lg:absolute lg:bottom-0 lg:inset-x-0 lg:h-[400px] bg-bluegray_50/70 rounded-3xl flex items-center px-6 md:px-10 lg:pl-6 lg:pr-12 py-10 md:py-12">
-            <div className="flex flex-col items-start max-w-xl w-full">
-              <h1 className="font-bold text-bluegray_900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
-                Get started for free
-              </h1>
-              <p className="mt-4 md:mt-6 text-bluegray_500 text-lg md:text-xl lg:text-2xl leading-relaxed">
-                Turn your business ideas into incredible reality
-              </p>
-              <div className="flex flex-col sm:flex-row flex-wrap gap-4 mt-6 md:mt-8">
-                <Button asChild className="bg-teal_400 text-white px-8 py-4 rounded-md font-semibold text-base md:text-lg">
-                  <Link href="/signup">Start 30 day trial</Link>
-                </Button>
-                <Button asChild className="bg-teal_400 text-white px-8 py-4 rounded-md font-semibold text-base md:text-lg">
-                  <Link href="/demo">View Demo</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-          {/* Right Image - Stays in place */}
-          <div className="relative flex flex-col lg:flex-row items-center justify-end gap-10 pt-10 md:pt-16 lg:pt-0">
-            <div className="hidden lg:block w-full lg:w-auto" /> {/* Spacer for left side on lg */}
-            <Image
-              src="/images/img_youngbusiness.png"
-              alt="youngbusiness"
-              width={500}
-              height={500}
-              className="w-full max-w-xs sm:max-w-sm lg:max-w-md object-contain"
-            />
-          </div>
-        </div>
-      </section>
+      <CTA />
 
     </div>
   );

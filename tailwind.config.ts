@@ -91,8 +91,6 @@ const config: Config = {
         yellow_50: '#fffbeb',
         yellow_100: '#fef3c7',
         teal_300: '#4dd0e1',
-        bluegray_51: '#eef0f2',
-        bluegray_300: '#959ead',
         bluegray_600: '#475569',
         bluegray_901: '#1e293b',
       },

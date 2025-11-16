@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Mail } from "lucide-react";
@@ -17,7 +16,8 @@ export default function LoginPage() {
   const handleGoogleSignIn = async () => {
     try {
       setGoogleLoading(true);
-      await signIn("google", { callbackUrl: "/demo" });
+      // Placeholder - backend integration pending
+      toast.info("Google sign-in will be available soon");
     } catch (error) {
       toast.error("Failed to sign in with Google");
     } finally {
@@ -35,18 +35,9 @@ export default function LoginPage() {
 
     try {
       setManualLoading(true);
-      const result = await signIn("credentials", {
-        email,
-        password,
-        redirect: false,
-      });
-
-      if (result?.error) {
-        toast.error("Invalid email or password");
-      } else if (result?.ok) {
-        toast.success("Sign in successful!");
-        window.location.href = "/demo";
-      }
+      // Placeholder - backend integration pending
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      toast.info("Authentication feature coming soon");
     } catch (error) {
       toast.error("Failed to sign in");
     } finally {

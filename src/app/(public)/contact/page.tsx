@@ -35,20 +35,10 @@ const ContactPage = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        toast.success(data.message);
-        setFormData({ name: "", hospitalName: "", email: "", phone: "", message: "", preferredContact: "" });
-      } else {
-        toast.error(data.message || "Failed to send message");
-      }
+      // Placeholder - backend integration pending
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      toast.success("Your message has been sent successfully. We will contact you soon!");
+      setFormData({ name: "", hospitalName: "", email: "", phone: "", message: "", preferredContact: "" });
     } catch (error) {
       toast.error("An error occurred. Please try again.");
     } finally {

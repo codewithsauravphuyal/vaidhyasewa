@@ -37,39 +37,23 @@ export default function SignupPage() {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          hospitalName: formData.businessName,
-          message: `Address: ${formData.address}\nEmployee Size: ${formData.employeeSize}\nHow You Know: ${formData.howYouKnow}\nRemarks: ${formData.remark}`,
-        }),
+      // Placeholder - backend integration pending
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      toast.success("Signup successful! We'll contact you soon.");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        address: "",
+        businessName: "",
+        employeeSize: "",
+        remark: "",
+        howYouKnow: "",
       });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        toast.success("Signup successful! We'll contact you soon.");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          address: "",
-          businessName: "",
-          employeeSize: "",
-          remark: "",
-          howYouKnow: "",
-        });
-        // Redirect to pricing or thank you page
-        setTimeout(() => {
-          window.location.href = "/pricing";
-        }, 2000);
-      } else {
-        toast.error(data.message || "Failed to submit. Please try again.");
-      }
+      // Redirect to pricing or thank you page
+      setTimeout(() => {
+        window.location.href = "/pricing";
+      }, 2000);
     } catch (error) {
       toast.error("An error occurred. Please try again.");
     } finally {

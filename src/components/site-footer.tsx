@@ -58,7 +58,6 @@ export function SiteFooter() {
             <ul className="space-y-2 md:space-y-3 text-xs md:text-sm lg:text-base">
               <li><Link href="/about" className="text-white_A700 hover:text-teal_300 transition-colors block py-1">About</Link></li>
               <li><Link href="/case-studies" className="text-white_A700 hover:text-teal_300 transition-colors block py-1">Case Studies</Link></li>
-              <li><Link href="/partners" className="text-white_A700 hover:text-teal_300 transition-colors block py-1">Partners</Link></li>
               <li><Link href="/terms" className="text-white_A700 hover:text-teal_300 transition-colors block py-1">Terms of use</Link></li>
               <li><Link href="/privacy" className="text-white_A700 hover:text-teal_300 transition-colors block py-1">Privacy</Link></li>
             </ul>

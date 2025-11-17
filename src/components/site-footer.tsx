@@ -39,7 +39,6 @@ export function SiteFooter() {
               <li><Link href="/features" className="text-white_A700 hover:text-teal_300 transition-colors block py-1">Features</Link></li>
               <li><Link href="/pricing" className="text-white_A700 hover:text-teal_300 transition-colors block py-1">Pricing</Link></li>
               <li><Link href="/demo" className="text-white_A700 hover:text-teal_300 transition-colors block py-1">Demo</Link></li>
-              <li><Link href="/security" className="text-white_A700 hover:text-teal_300 transition-colors block py-1">Security</Link></li>
             </ul>
           </div>
 
@@ -47,7 +46,6 @@ export function SiteFooter() {
           <div className="order-4 md:order-3 lg:order-3">
             <h4 className="font-semibold text-white_A700 mb-4 text-sm md:text-base lg:text-lg">Resources</h4>
             <ul className="space-y-2 md:space-y-3 text-xs md:text-sm lg:text-base">
-              <li><Link href="/downloads" className="text-white_A700 hover:text-teal_300 transition-colors block py-1">Downloads</Link></li>
               <li><Link href="/blog" className="text-white_A700 hover:text-teal_300 transition-colors block py-1">Blog</Link></li>
               <li><Link href="/faq" className="text-white_A700 hover:text-teal_300 transition-colors block py-1">FAQ</Link></li>
               <li><Link href="/contact" className="text-white_A700 hover:text-teal_300 transition-colors block py-1">Contact</Link></li>

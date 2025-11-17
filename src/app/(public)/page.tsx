@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, User, FlaskConical, Users, Pill, Scan, UserCheck, CheckCircle2, Shield, Zap, BarChart3, Clock, Star, TrendingUp, Award, Plus, Minus } from "lucide-react";
+import { ArrowRight, Calendar, User, FlaskConical, Users, Pill, Scan, UserCheck, CheckCircle2, Shield, Zap, BarChart3, Clock, Star, TrendingUp, Award, Plus, Minus, X } from "lucide-react";
 import { Herohome } from "@/components/homehero_section";
 import { TestimonialsCarousel } from "@/components/testimonials-carousel";
 import CTA from "@/components/cta_section";
@@ -509,6 +509,72 @@ const faqCategories = [
 export default function Home() {
   const [expandedFAQ, setExpandedFAQ] = useState<string | null>(null);
   const [expandedCategory, setExpandedCategory] = useState<string | null>(faqCategories[0]?.name || null);
+  const [showMaintenancePopup, setShowMaintenancePopup] = useState(true);
+
+  useEffect(() => {
+    // Show popup on initial load
+    setShowMaintenancePopup(true);
+  }, []);
+
+  const handleClosePopup = () => {
+    setShowMaintenancePopup(false);
+  };
+
+  if (showMaintenancePopup) {
+    return (
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto shadow-xl">
+          <div className="p-6">
+            <div className="flex justify-end mb-4">
+              <button
+                onClick={handleClosePopup}
+                className="text-gray-500 hover:text-gray-700 transition-colors"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="text-center mb-6">
+              <h2 className="text-2xl font-bold text-bluegray_900 mb-2">Under Maintenance</h2>
+              <p className="text-bluegray_600 mb-6">
+                Sorry for the inconvenience, we're currently performing maintenance. We'll be back shortly!
+              </p>
+              <p className="text-sm text-bluegray_700 mb-6">
+                For more info, contact Youth IT or Vaidhya Sewa for demo and to get started.
+              </p>
+            </div>
+            <div className="space-y-4 text-sm">
+              <div>
+                <h3 className="font-semibold text-bluegray_900 mb-2">Email</h3>
+                <ul className="space-y-1 text-bluegray_600">
+                  <li>info@vaidhyasewa.com</li>
+                  <li>support@vaidhyasewa.com</li>
+                  <li>hamroyouthit@gmail.com</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-bluegray_900 mb-2">Phone</h3>
+                <ul className="space-y-1 text-bluegray_600">
+                  <li>+977 9746888890</li>
+                  <li>+977 9741776222</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-bluegray_900 mb-2">Address</h3>
+                <p className="text-bluegray_600">Itahari-06 Pragati Marga, Sunsari, Koshi Province, Nepal</p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-bluegray_900 mb-2">Office Hours</h3>
+                <ul className="space-y-1 text-bluegray_600">
+                  <li>Sunday - Friday: 10:00 AM - 6:00 PM</li>
+                  <li>Saturday: 10:00 AM - 4:00 PM</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full bg-white_A700 font-poppins">

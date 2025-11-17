@@ -159,12 +159,6 @@ export default function PricingPage() {
 
       <section className="relative py-20 md:py-28 bg-bluegray_50 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
-           <div className="text-center mb-12">
-            <h2 className="text-3xl font-semibold text-bluegray_900 mb-4">Our pricing plans suits your every need</h2>
-            <p className="text-base md:text-lg text-bluegray_500 max-w-2xl mx-auto">
-              Discover tailored pricing options designed to scale with your clinic or hospital. All plans come with a 30-day free trial and seamless onboarding.
-            </p>
-          </div>
           {/* Pricing Cards */}
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {plans.map((plan, idx) => {

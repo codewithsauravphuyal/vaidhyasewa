@@ -3,7 +3,16 @@
 import { useState } from "react";
 import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
+import { Herosection } from "@/components/hero_section";
+import CTA from "@/components/cta_section";
+
+const HeroData = {
+  subtitle: "FAQ",
+  title: "Frequently Asked",
+  title_2: "Questions",
+  description: ["Find answers to common questions about Vaidhya Sewa"],
+};
 
 const faqCategories = [
   {
@@ -21,6 +30,10 @@ const faqCategories = [
         q: "Is Vaidhya Sewa cloud-based?",
         a: "Yes, Vaidhya Sewa is cloud-based for easy accessibility. Enterprise customers can also opt for on-premise deployment.",
       },
+      {
+        q: "How does Vaidhya Sewa ensure compliance with healthcare regulations?",
+        a: "Vaidhya Sewa is compliant with standards like HIPAA, GDPR, and local healthcare regulations. We conduct regular audits to maintain these standards.",
+      },
     ],
   },
   {
@@ -28,7 +41,7 @@ const faqCategories = [
     faqs: [
       {
         q: "What are the pricing plans?",
-        a: "We offer Basic (₹5,000/month), Standard (₹15,000/month), Advanced (₹35,000/month), and Enterprise (custom pricing) plans.",
+        a: "We offer starter (Rs. 14,999 per years), Standard (Rs. 29,999 per year), and Premimum (custom pricing) plans.",
       },
       {
         q: "Is there a free trial?",
@@ -41,6 +54,10 @@ const faqCategories = [
       {
         q: "Do you offer discounts for annual billing?",
         a: "Yes, we offer 15% discount on annual plans. Contact our sales team for details.",
+      },
+      {
+        q: "Are there additional fees for extra users or storage?",
+        a: "Basic and Standard plans include up to 10 users. Additional users are ₹500/month each. Storage is unlimited on all plans.",
       },
     ],
   },
@@ -63,6 +80,10 @@ const faqCategories = [
         q: "Do I need special hardware?",
         a: "No, Vaidhya Sewa is cloud-based and works on any device with internet connection. A modern browser is all you need.",
       },
+      {
+        q: "Can I test the system before full setup?",
+        a: "Absolutely. During the free trial, you can explore the system with sample data to get familiar before committing.",
+      },
     ],
   },
   {
@@ -83,6 +104,14 @@ const faqCategories = [
       {
         q: "Can I integrate with other systems?",
         a: "Yes, Vaidhya Sewa offers API access and can integrate with other healthcare systems.",
+      },
+      {
+        q: "Does it include patient portal features?",
+        a: "Yes, patients can access their records, book appointments, and view bills through a secure self-service portal.",
+      },
+      {
+        q: "Is mobile app support available?",
+        a: "We offer a mobile app for doctors and staff for on-the-go access. Patient app is in development.",
       },
     ],
   },
@@ -105,6 +134,10 @@ const faqCategories = [
         q: "What happens if I want to leave?",
         a: "You can export all your data at any time. We provide complete data portability.",
       },
+      {
+        q: "How do you handle user access controls?",
+        a: "Role-based access control (RBAC) ensures users only see data relevant to their role, with audit logs for all actions.",
+      },
     ],
   },
   {
@@ -126,6 +159,31 @@ const faqCategories = [
         q: "How do I report a bug?",
         a: "You can report bugs through our support portal, email, or phone. We prioritize critical bugs and aim to fix them within 24 hours.",
       },
+      {
+        q: "Do you offer dedicated account managers?",
+        a: "Yes, for Enterprise plans, you'll have a dedicated account manager for personalized assistance.",
+      },
+    ],
+  },
+  {
+    name: "Integrations & API",
+    faqs: [
+      {
+        q: "What integrations are supported?",
+        a: "We integrate with popular EMR systems, payment gateways like Razorpay, and lab equipment via HL7/FHIR standards.",
+      },
+      {
+        q: "How can I access the API?",
+        a: "API documentation is available in your dashboard. All plans include read/write API access with rate limits based on your tier.",
+      },
+      {
+        q: "Can I build custom apps with your API?",
+        a: "Yes, our RESTful API allows for custom applications, reports, and automations tailored to your needs.",
+      },
+      {
+        q: "Is there webhook support for real-time updates?",
+        a: "Yes, webhooks enable real-time notifications for events like new appointments or payments.",
+      },
     ],
   },
 ];
@@ -135,86 +193,85 @@ export default function FAQPage() {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(faqCategories[0].name);
 
   return (
-    <div className="w-full">
+    <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-transparent">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-dark mb-4">Frequently Asked Questions</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Find answers to common questions about Vaidhya Sewa
-            </p>
-          </div>
-        </div>
-      </section>
+
+      <Herosection {...HeroData} />
 
       {/* FAQ */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-          <div className="space-y-6">
+      <section className="py-8 md:py-12 lg:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-4 md:gap-2 lg:gap-2">
             {faqCategories.map((category) => (
-              <div key={category.name} className="border border-border rounded-lg overflow-hidden">
+              <article
+                key={category.name}
+                className="bg-white/80 backdrop-blur-sm border border-border/50"
+              >
                 <button
                   onClick={() =>
                     setExpandedCategory(
                       expandedCategory === category.name ? null : category.name
                     )
                   }
-                  className="w-full p-6 flex items-center justify-between bg-secondary/5 hover:bg-secondary/10 transition-colors"
+                  className="w-full p-4 md:p-6 flex items-center justify-between text-left rounded-t-2xl"
                 >
-                  <h2 className="text-xl font-semibold text-dark">{category.name}</h2>
-                  <ChevronDown
-                    className={`h-5 w-5 text-primary transition-transform ${
-                      expandedCategory === category.name ? "rotate-180" : ""
-                    }`}
-                  />
+                  <h2 className="text-base md:text-lg lg:text-xl font-bold text-foreground flex-1">
+                    {category.name}
+                  </h2>
+                  {expandedCategory === category.name ? (
+                    <Minus className="h-5 w-5 md:h-6 md:w-6 text-primary transition-transform duration-200" />
+                  ) : (
+                    <Plus className="h-5 w-5 md:h-6 md:w-6 text-primary transition-transform duration-200" />
+                  )}
                 </button>
 
-                {expandedCategory === category.name && (
-                  <div className="divide-y">
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    expandedCategory === category.name ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="divide-y divide-border/50">
                     {category.faqs.map((faq, idx) => {
                       const faqId = `${category.name}-${idx}`;
                       return (
-                        <div key={faqId} className="p-6">
+                        <div key={faqId} className="p-4 md:p-6">
                           <button
                             onClick={() =>
                               setExpandedFAQ(expandedFAQ === faqId ? null : faqId)
                             }
-                            className="w-full flex items-start justify-between gap-4 text-left"
+                            className="w-full flex items-start justify-between gap-3 text-left"
                           >
-                            <h3 className="font-semibold text-dark flex-1">{faq.q}</h3>
-                            <ChevronDown
-                              className={`h-5 w-5 text-primary flex-shrink-0 mt-1 transition-transform ${
-                                expandedFAQ === faqId ? "rotate-180" : ""
-                              }`}
-                            />
+                            <h3 className="font-semibold text-foreground flex-1 text-sm md:text-base leading-tight">
+                              {faq.q}
+                            </h3>
+                            {expandedFAQ === faqId ? (
+                              <Minus className="h-4 w-4 md:h-5 md:w-5 text-primary flex-shrink-0 mt-0.5 transition-transform duration-200" />
+                            ) : (
+                              <Plus className="h-4 w-4 md:h-5 md:w-5 text-primary flex-shrink-0 mt-0.5 transition-transform duration-200" />
+                            )}
                           </button>
-                          {expandedFAQ === faqId && (
-                            <p className="text-muted-foreground mt-4">{faq.a}</p>
-                          )}
+                          <div
+                            className={`mt-3 overflow-hidden transition-all duration-300 ease-in-out ${
+                              expandedFAQ === faqId ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
+                            }`}
+                          >
+                            <p className="text-muted-foreground text-xs md:text-sm leading-relaxed pl-1">
+                              {faq.a}
+                            </p>
+                          </div>
                         </div>
                       );
                     })}
                   </div>
-                )}
-              </div>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-secondary/5">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl font-bold text-dark mb-6">Didn't find your answer?</h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Contact our support team and we'll be happy to help.
-          </p>
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-            <a href="/contact">Contact Us</a>
-          </Button>
-        </div>
-      </section>
+      <CTA />
     </div>
   );
 }

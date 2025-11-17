@@ -3,10 +3,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, FlaskConical, Users, Pill, Scan, UserCheck, CheckCircle2, CreditCard, FileText } from "lucide-react";
+import { Herosection } from "@/components/hero_section";
+import CTA from "@/components/cta_section";
 
 export const metadata: Metadata = {
   title: "Features - Vaidhya Sewa",
   description: "Explore all features of Vaidhya Sewa hospital management system",
+};
+
+const HeroData = {
+  subtitle: "Awesome Features",
+  title: "Our Features at",
+  title_2: "Vaidhya Sewa",
+  description: ["Everything you need to manage your hospital operations efficiently"],
 };
 
 const features = [
@@ -132,58 +141,51 @@ const features = [
   },
 ];
 
+const benefits = [
+  { title: "Increased Efficiency", description: "Reduce administrative workload by up to 80% with automated processes" },
+  { title: "Better Patient Care", description: "Improved patient experience and satisfaction with streamlined workflows" },
+  { title: "Data Security", description: "Enterprise-grade security and compliance with HIPAA standards" },
+  { title: "Scalability", description: "Grow from single clinic to multi-branch hospital seamlessly" },
+  { title: "Real-time Analytics", description: "Comprehensive reports and insights for data-driven decisions" },
+  { title: "Easy Integration", description: "Seamless integration with existing systems and third-party services" },
+];
+
 export default function FeaturesPage() {
   return (
-    <div className="w-full bg-white_A700/95 backdrop-blur-sm font-poppins">
+    <div className="min-h-screen w-full bg-white/95 backdrop-blur-sm font-poppins text-bluegray-900">
       {/* Hero */}
-      <section className="relative py-16 md:py-24 overflow-hidden bg-bluegray_50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12 max-w-2xl mx-auto">
-            <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg mb-4">
-              Awesome Features
-            </p>
-            <h1 className="text-3xl md:text-4xl lg:text-[36px] font-semibold text-bluegray_900 mb-4">
-              Valuable features of Vaidhya Sewa
-            </h1>
-            <p className="text-base md:text-lg text-bluegray_500">
-              Everything you need to manage your hospital operations efficiently
-            </p>
-          </div>
-        </div>
-      </section>
+      <Herosection {...HeroData} />
 
       {/* Features Grid */}
-      <section className="py-16 md:py-24 bg-white_A700">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="py-12 sm:py-16 lg:py-24 bg-bluegray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {features.map((feature, idx) => {
               const IconComponent = feature.icon;
               const iconColor = feature.color === "teal_700" ? "#006d77" : "#25a6b2";
               return (
-                <div key={idx} className="bg-white_A700 rounded-lg shadow-bs2 p-6 md:p-8 hover:shadow-lg transition-all border border-gray_100 group">
-                  <div className="w-14 h-14 rounded-lg bg-teal_50 flex items-center justify-center mb-6 group-hover:bg-teal_100 transition-colors">
-                    <IconComponent 
-                      className="h-7 w-7" 
-                      style={{ color: iconColor }} 
-                    />
+                <article
+                  key={idx}
+                  className="group bg-white rounded-xl shadow-sm border border-gray-100 p-6 sm:p-8 hover:shadow-md transition-all duration-300"
+                >
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-50 transition-colors group-hover:bg-teal-100">
+                    <IconComponent className="h-7 w-7" style={{ color: iconColor }} />
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-bluegray_900 mb-4">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm md:text-base text-bluegray_500 leading-relaxed mb-4">
+                  <h3 className="mb-4 text-lg font-semibold sm:text-xl">{feature.title}</h3>
+                  <p className="mb-6 text-sm leading-relaxed text-bluegray-500 sm:text-base">
                     {feature.description}
                   </p>
                   <ul className="space-y-2">
                     {feature.details.map((detail, detailIdx) => (
                       <li key={detailIdx} className="flex items-start gap-2">
-                        <div className="w-4 h-4 rounded-full bg-teal_700 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-white_A700 text-xs">✓</span>
+                        <div className="mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-teal-700">
+                          <span className="text-xs font-medium text-white">✓</span>
                         </div>
-                        <span className="text-sm text-bluegray_700">{detail}</span>
+                        <span className="text-sm text-bluegray-700">{detail}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
+                </article>
               );
             })}
           </div>
@@ -191,32 +193,26 @@ export default function FeaturesPage() {
       </section>
 
       {/* Key Benefits */}
-      <section className="py-16 md:py-24 bg-bluegray_50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-bluegray_900 mb-4">
-              Key Benefits
-            </h2>
-            <p className="text-base md:text-lg text-bluegray_500 max-w-2xl mx-auto">
+      <section className="py-12 sm:py-16 lg:py-24 bg-bluegray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <h2 className="mb-4 text-3xl font-semibold sm:text-4xl">Key Benefits</h2>
+            <p className="text-base text-bluegray-500 sm:text-lg">
               Discover how Vaidhya Sewa transforms hospital operations
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: "Increased Efficiency", description: "Reduce administrative workload by up to 80% with automated processes" },
-              { title: "Better Patient Care", description: "Improved patient experience and satisfaction with streamlined workflows" },
-              { title: "Data Security", description: "Enterprise-grade security and compliance with HIPAA standards" },
-              { title: "Scalability", description: "Grow from single clinic to multi-branch hospital seamlessly" },
-              { title: "Real-time Analytics", description: "Comprehensive reports and insights for data-driven decisions" },
-              { title: "Easy Integration", description: "Seamless integration with existing systems and third-party services" },
-            ].map((benefit, idx) => (
-              <div key={idx} className="flex gap-4 p-6 bg-white_A700 rounded-lg shadow-bs2">
-                <div className="w-8 h-8 rounded-full bg-teal_700 flex items-center justify-center flex-shrink-0">
-                  <span className="text-white_A700 text-sm">✓</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {benefits.map((benefit, idx) => (
+              <div
+                key={idx}
+                className="flex gap-4 rounded-xl bg-white p-6 shadow-sm transition-all hover:shadow-md"
+              >
+                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-teal-700">
+                  <span className="text-sm font-medium text-white">✓</span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-bluegray_900 mb-2">{benefit.title}</h3>
-                  <p className="text-bluegray_500 text-sm md:text-base">{benefit.description}</p>
+                  <h3 className="mb-2 text-lg font-semibold">{benefit.title}</h3>
+                  <p className="text-sm text-bluegray-500 sm:text-base">{benefit.description}</p>
                 </div>
               </div>
             ))}
@@ -225,22 +221,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-white_A700">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold text-bluegray_900 mb-6">Ready to Get Started?</h2>
-          <p className="text-base md:text-lg text-bluegray_500 mb-8 max-w-2xl mx-auto">
-            Experience the power of Vaidhya Sewa with a free demo or contact our team for more information.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-teal_700 hover:bg-teal_700/90 text-white_A700 font-semibold shadow-md">
-              <Link href="/demo">View Demo</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-teal_400 text-teal_400 hover:bg-teal_400/10">
-              <Link href="/contact">Contact Us</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CTA />
     </div>
   );
 }

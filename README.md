@@ -98,13 +98,9 @@ vaidhyasewa/
 │   │   │   ├── blog/page.tsx         # Blog
 │   │   │   ├── contact/page.tsx      # Contact
 │   │   │   ├── faq/page.tsx          # FAQ
-│   │   │   ├── security/page.tsx     # Security
-│   │   │   ├── downloads/page.tsx    # Downloads
 │   │   │   ├── login/page.tsx        # Login
 │   │   │   ├── privacy/page.tsx      # Privacy
 │   │   │   └── terms/page.tsx        # Terms
-│   │   ├── api/
-│   │   │   └── contact/route.ts      # Contact API
 │   │   ├── layout.tsx                # Root layout
 │   │   └── globals.css               # Global styles
 │   ├── components/
@@ -112,11 +108,6 @@ vaidhyasewa/
 │   │   ├── site-header.tsx
 │   │   ├── site-footer.tsx
 │   │   └── main-nav.tsx
-│   └── lib/
-│       ├── db.ts                     # MongoDB connection
-│       ├── models/                   # Database models
-│       ├── validations/              # Zod schemas
-│       └── utils.ts
 ├── public/                           # Static assets
 ├── package.json
 ├── tsconfig.json

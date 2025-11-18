@@ -5,24 +5,12 @@ import { ArrowRight } from "lucide-react";
 
 export function Herohome() {
   return (
-    <section
-      className="
-        relative overflow-hidden
-        min-h-[600px] md:min-h-[700px] lg:min-h-[850px]
-        bg-white_A700
-      "
-    >
+    <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] lg:min-h-[850px] bg-white_A700">
       {/* Background with overlay */}
       <div className="absolute inset-0">
         <div className="relative w-full h-full">
-
           {/* WHITE OVERLAY */}
-          <div className="
-            absolute inset-0
-            bg-white_A700/80
-            md:bg-transparent
-            z-[1]
-          "></div>
+          <div className="absolute inset-0 bg-white_A700/80 md:bg-transparent z-[1]"></div>
 
           {/* BACKGROUND IMAGE */}
           <Image

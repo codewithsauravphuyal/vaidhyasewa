@@ -1,127 +1,160 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vaidhya Sewa - Hospital Management System Website
 
-## Getting Started
+A comprehensive, production-ready marketing website for **Vaidhya Sewa**, a modern Hospital Management System. Built with Next.js 16, React 19, TypeScript, Tailwind CSS, and Shadcn UI.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-16.0.3-black)
+![React](https://img.shields.io/badge/React-19.2.0-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.1-38bdf8)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📋 Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Overview](#overview)
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Pages Overview](#pages-overview)
+- [Backend Requirements](#backend-requirements)
+- [Environment Variables](#environment-variables)
+- [Development](#development)
+- [Build & Deployment](#build--deployment)
+- [Support](#support)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎯 Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Vaidhya Sewa is a professional SaaS platform designed to showcase a Hospital Management System with all essential pages, features, and functionality for a modern healthcare software product. The website serves as the marketing frontend for the Vaidhya Sewa HMS platform.
 
-## Learn More
+### Key Highlights
 
-To learn more about Next.js, take a look at the following resources:
+- **15+ Professional Pages** - Complete website with all essential sections
+- **Responsive Design** - Mobile-first, tablet, and desktop optimized
+- **Modern UI/UX** - Clean, professional design with smooth animations
+- **SEO Optimized** - Meta tags, Open Graph, structured data ready
+- **Authentication Ready** - Login and signup pages with Google OAuth support
+- **Form Validation** - Zod schema validation for all forms
+- **Backend Ready** - Complete API requirements documented
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Pages & Sections
+- ✅ Homepage with hero, features, testimonials, pricing preview
+- ✅ Features page with detailed module descriptions
+- ✅ Pricing page with 3 pricing plans (Starter, Standard, Premium)
+- ✅ About page with mission, vision, and company values
+- ✅ Blog page with categories and search (ready for backend)
+- ✅ Contact page with form and contact information
+- ✅ FAQ page with categorized questions
+- ✅ Case Studies page with success stories
+- ✅ Partners page with partner categories
+- ✅ Demo page with video, demo accounts, and screenshots
+- ✅ Screenshots gallery with filtering
+- ✅ Login page (no header/footer)
+- ✅ Signup page (no header/footer)
+- ✅ Get Started page (hospital registration form)
+- ✅ Privacy Policy page
+- ✅ Terms of Service page
 
-## Deploy on Vercel
+### Components
+- 🎨 Reusable UI components (Shadcn UI)
+- 🎭 Hero sections (home and page variants)
+- 📝 Form components with validation
+- 🎠 Testimonials carousel with drag/swipe
+- 📱 Responsive navigation (header & footer)
+- 🎯 CTA sections
+- 🔔 Toast notifications (Sonner)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Functionality
+- 🔐 User authentication (login/signup)
+- 📧 Contact form submission
+- 📝 Hospital registration form
+- 📰 Newsletter subscription
+- 🔍 Search functionality (blog)
+- 🎨 Dark mode support (theme provider)
+- 📱 Mobile-responsive design
+- ⚡ Optimized performance
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## Vaidhya Sewa - Professional SaaS Website
-
-A comprehensive, production-ready SaaS website for **Vaidhya Sewa**, a modern Hospital Management System. Built with Next.js 16, React 19, TypeScript, Tailwind CSS v4, and Shadcn UI.
-
-## Overview
-
-Vaidhya Sewa is a professional SaaS platform designed to showcase a Hospital Management System with all essential pages, features, and functionality for a modern healthcare software product.
-
-### Key Features
-
-- **13+ Professional Pages** - Complete website blueprint
-- **Responsive Design** - Mobile, tablet, and desktop optimized
-- **Modern UI/UX** - Professional monochromatic color scheme
-- **SEO Optimized** - Meta tags, Open Graph, structured data
-- **Contact Forms** - Zod validation, MongoDB integration
-- **Blog System** - Categorized articles with search
-- **Case Studies** - Success stories and testimonials
-- **Pricing Pages** - Multiple plans with comparison
-- **Security Page** - Compliance and infrastructure details
-- **FAQ Section** - Grouped by categories
-- **Downloads** - Brochures, APKs, documentation
-- **Authentication Ready** - Google OAuth integration
-- **API Routes** - Backend endpoints for forms
-
-## Technology Stack
+## 🛠 Technology Stack
 
 ### Frontend
-- **Next.js 16** - React framework with App Router
-- **React 19** - UI library
-- **TypeScript** - Type-safe development
-- **Tailwind CSS v4** - Utility-first styling
+- **Next.js 16.0.3** - React framework with App Router
+- **React 19.2.0** - UI library
+- **TypeScript 5** - Type-safe development
+- **Tailwind CSS 3.4.1** - Utility-first styling
 - **Shadcn UI** - High-quality component library
 - **Lucide React** - Beautiful icons
 - **Framer Motion** - Smooth animations
 - **React Hook Form** - Efficient form handling
+- **Zod** - Schema validation
+- **Sonner** - Toast notifications
 
-### Backend & Database
-- **MongoDB** - NoSQL database
+### Backend & Database (Ready for Integration)
+- **MongoDB** - NoSQL database (configured)
 - **Mongoose** - ODM for MongoDB
+- **NextAuth** - Authentication framework
 - **Next.js API Routes** - Serverless backend
 
-### Validation & Security
-- **Zod** - Schema validation
-- **NextAuth** - Authentication framework
-- **Cloudinary** - Image hosting (protected URLs)
+### Additional Tools
+- **Next Themes** - Dark mode support
+- **Cloudinary** - Image hosting (configured)
+- **Date-fns** - Date formatting
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 vaidhyasewa/
 ├── src/
 │   ├── app/
-│   │   ├── (pages)
-│   │   │   ├── page.tsx              # Home
-│   │   │   ├── features/page.tsx     # Features
-│   │   │   ├── pricing/page.tsx      # Pricing
-│   │   │   ├── demo/page.tsx         # Demo
-│   │   │   ├── screenshots/page.tsx  # Screenshots
-│   │   │   ├── case-studies/page.tsx # Case Studies
-│   │   │   ├── about/page.tsx        # About
-│   │   │   ├── blog/page.tsx         # Blog
-│   │   │   ├── contact/page.tsx      # Contact
-│   │   │   ├── faq/page.tsx          # FAQ
-│   │   │   ├── login/page.tsx        # Login
-│   │   │   ├── privacy/page.tsx      # Privacy
-│   │   │   └── terms/page.tsx        # Terms
-│   │   ├── layout.tsx                # Root layout
-│   │   └── globals.css               # Global styles
+│   │   ├── (public)/              # Public pages group
+│   │   │   ├── page.tsx          # Homepage
+│   │   │   ├── about/            # About page
+│   │   │   ├── blog/             # Blog listing
+│   │   │   ├── case-studies/     # Case studies & partners
+│   │   │   ├── contact/          # Contact form
+│   │   │   ├── demo/             # Demo page
+│   │   │   ├── faq/              # FAQ page
+│   │   │   ├── features/         # Features page
+│   │   │   ├── getstarted/      # Hospital registration
+│   │   │   ├── login/           # Login page (no header/footer)
+│   │   │   ├── pricing/         # Pricing plans
+│   │   │   ├── privacy/         # Privacy policy
+│   │   │   ├── screenshots/     # Screenshots gallery
+│   │   │   ├── signup/         # Signup page (no header/footer)
+│   │   │   ├── terms/           # Terms of service
+│   │   │   └── layout.tsx      # Public layout
+│   │   ├── layout.tsx           # Root layout
+│   │   └── globals.css          # Global styles
 │   ├── components/
-│   │   ├── ui/                       # Shadcn components
-│   │   ├── site-header.tsx
-│   │   ├── site-footer.tsx
-│   │   └── main-nav.tsx
-├── public/                           # Static assets
+│   │   ├── ui/                  # Shadcn UI components
+│   │   ├── conditional-layout.tsx  # Header/footer conditional
+│   │   ├── cta_section.tsx      # CTA component
+│   │   ├── hero_section.tsx     # Page hero
+│   │   ├── homehero_section.tsx # Homepage hero
+│   │   ├── main-nav.tsx         # Navigation
+│   │   ├── site-footer.tsx      # Footer
+│   │   ├── site-header.tsx      # Header
+│   │   └── testimonials-carousel.tsx # Testimonials
+│   └── lib/
+│       ├── utils.ts             # Utility functions
+│       └── validations/         # Zod schemas
+├── public/                      # Static assets
+│   └── images/                  # Images
+├── BACKEND_REQUIREMENTS.md      # Complete backend API docs
 ├── package.json
 ├── tsconfig.json
 ├── tailwind.config.ts
 ├── postcss.config.mjs
-└── next.config.ts
+├── next.config.ts
+└── env.example                  # Environment variables template
 ```
 
-## Quick Start
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+
-- npm or yarn
-- MongoDB Atlas account (free tier available)
+
+- **Node.js** 18+ (recommended: 20+)
+- **npm** or **yarn** or **pnpm**
+- **MongoDB Atlas** account (optional, for backend integration)
 
 ### Installation
 
@@ -134,168 +167,234 @@ vaidhyasewa/
 2. **Install dependencies**
    ```bash
    npm install
+   # or
+   yarn install
+   # or
+   pnpm install
    ```
 
 3. **Set up environment variables**
-   Create `.env.local`:
+   
+   Copy `env.example` to `.env.local`:
+   ```bash
+   cp env.example .env.local
+   ```
+   
+   Update `.env.local` with your values:
    ```env
+   # MongoDB (optional - for backend integration)
    MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/vaidhyasewa
-   NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
+   
+   # NextAuth (for authentication)
    NEXTAUTH_URL=http://localhost:3000
-   NEXTAUTH_SECRET=your_secret_key
+   NEXTAUTH_SECRET=your-secret-key-here
+   
+   # Cloudinary (for image hosting)
+   CLOUDINARY_CLOUD_NAME=your-cloud-name
+   CLOUDINARY_API_KEY=your-api-key
+   CLOUDINARY_API_SECRET=your-api-secret
+   
+   # Backend API (when backend is ready)
+   NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
    ```
 
 4. **Run development server**
    ```bash
    npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
    ```
 
 5. **Open browser**
+   
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Pages Overview
+## 📄 Pages Overview
 
-| Page | Path | Description |
-|------|------|-------------|
-| Home | `/` | Hero, features, roles, CTA |
-| Features | `/features` | Detailed module descriptions |
-| Pricing | `/pricing` | 4 pricing plans with comparison |
-| Demo | `/demo` | Video, interactive demo, screenshots |
-| Screenshots | `/screenshots` | Image gallery with filtering |
-| Case Studies | `/case-studies` | Success stories with metrics |
-| About | `/about` | Company story, mission, timeline |
-| Blog | `/blog` | Articles with categories & search |
-| Contact | `/contact` | Form with WhatsApp/Messenger links |
-| FAQ | `/faq` | Grouped FAQs by category |
-| Security | `/security` | Compliance & infrastructure |
-| Downloads | `/downloads` | Resources & documentation |
-| Login | `/login` | Authentication page |
-| Privacy | `/privacy` | Privacy policy |
-| Terms | `/terms` | Terms of service |
+| Page | Path | Description | Status |
+|------|------|-------------|--------|
+| **Home** | `/` | Hero, features, testimonials, pricing, FAQ | ✅ Complete |
+| **Features** | `/features` | Detailed feature descriptions | ✅ Complete |
+| **Pricing** | `/pricing` | 3 pricing plans with feature comparison | ✅ Complete |
+| **About** | `/about` | Mission, vision, company values | ✅ Complete |
+| **Blog** | `/blog` | Blog listing with search & categories | ✅ Ready for backend |
+| **Contact** | `/contact` | Contact form with validation | ✅ Ready for backend |
+| **FAQ** | `/faq` | Categorized FAQs | ✅ Ready for backend |
+| **Case Studies** | `/case-studies` | Success stories with metrics | ✅ Ready for backend |
+| **Partners** | `/case-studies/partners` | Partner listings | ✅ Ready for backend |
+| **Demo** | `/demo` | Video demo, demo accounts, screenshots | ✅ Complete |
+| **Screenshots** | `/screenshots` | Image gallery with filtering | ✅ Ready for backend |
+| **Login** | `/login` | User login (no header/footer) | ✅ Complete |
+| **Signup** | `/signup` | User account signup (no header/footer) | ✅ Complete |
+| **Get Started** | `/getstarted` | Hospital registration form | ✅ Ready for backend |
+| **Privacy** | `/privacy` | Privacy policy | ✅ Complete |
+| **Terms** | `/terms` | Terms of service | ✅ Complete |
 
-## Design System
+## 🔌 Backend Requirements
+
+The project includes a comprehensive **Backend Requirements Document** (`BACKEND_REQUIREMENTS.md`) that specifies:
+
+### API Endpoints Required
+
+#### Authentication
+- `POST /api/v1/auth/signup/` - User account creation
+- `POST /api/v1/auth/login/` - User login
+- `POST /api/v1/auth/google/` - Google OAuth
+- `POST /api/v1/auth/verify-email/` - Email verification
+- `POST /api/v1/auth/password/reset/` - Password reset
+
+#### Content Management
+- `GET /api/v1/blog/posts/` - Blog posts
+- `GET /api/v1/testimonials/` - Testimonials
+- `GET /api/v1/faq/` - FAQs
+- `GET /api/v1/features/` - Features
+- `GET /api/v1/pricing/plans/` - Pricing plans
+- `GET /api/v1/case-studies/` - Case studies
+- `GET /api/v1/partners/` - Partners
+- `GET /api/v1/screenshots/` - Screenshots
+- And many more...
+
+#### Form Submissions
+- `POST /api/v1/contact/` - Contact form
+- `POST /api/v1/newsletter/subscribe/` - Newsletter
+- `POST /api/v1/auth/register/` - Hospital registration
+
+### Django Models
+
+The document includes complete Django model specifications for:
+- User & Authentication
+- Blog Posts & Categories
+- Testimonials
+- Case Studies
+- Partners
+- FAQs
+- Features
+- Pricing Plans
+- Screenshots
+- Form Submissions
+- And more...
+
+**See `BACKEND_REQUIREMENTS.md` for complete API documentation.**
+
+## 🔐 Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+
+# NextAuth Configuration
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=generate-a-random-secret-key-here
+
+# Google OAuth (Optional)
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+
+# Backend API URL (When backend is ready)
+NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
+```
+
+## 💻 Development
+
+### Available Scripts
+
+```bash
+# Development
+npm run dev          # Start development server (Turbopack)
+npm run build        # Build for production
+npm start            # Start production server
+npm run lint         # Run ESLint
+```
+
+### Code Style
+
+- **TypeScript** - Type-safe development
+- **ESLint** - Code quality and linting
+- **Tailwind CSS** - Utility-first styling
+- **Shadcn UI** - Component library conventions
+
+### Key Development Notes
+
+1. **No Header/Footer Pages**: Login and Signup pages don't show header/footer (handled by `conditional-layout.tsx`)
+2. **Form Validation**: All forms use Zod schemas in `src/lib/validations/`
+3. **Responsive Design**: Mobile-first approach with Tailwind breakpoints
+4. **Image Optimization**: Uses Next.js Image component with `unoptimized` flag for local images
+5. **Toast Notifications**: Uses Sonner for user feedback
 
 ### Color Palette
-- **Primary**: `#3ac8c4` (Teal)
-- **Secondary**: `#217371` (Dark Teal)
-- **Dark**: `#091e1d` (Almost Black)
-- **Background**: `#ffffff` / `#000000` (light/dark mode)
+
+- **Primary Teal**: `#25a6b2` (teal_400)
+- **Dark Teal**: `#006d77` (teal_700)
+- **Background**: `#ffffff` (white_A700)
+- **Text**: `#1e293b` (bluegray_900)
+- **Muted**: `#64748b` (bluegray_500)
 
 ### Typography
-- Font: Inter (Google Fonts)
-- Sizes: Responsive scaling
-- Weights: 400, 500, 600, 700, 800
+
+- **Font Family**: Poppins (primary), Inter (fallback)
+- **Weights**: 400, 500, 600, 700
+- **Responsive**: Scales from mobile to desktop
 
 ### Components
-- Buttons (primary, secondary, outline)
+
+- Buttons (primary, secondary, outline, ghost)
 - Cards with hover effects
 - Forms with validation
 - Modals and dialogs
 - Navigation components
 - Footer with links
 
-## Configuration
-
-### Tailwind CSS v4
-The project uses Tailwind CSS v4 with the new `@tailwindcss/postcss` plugin.
-
-Update colors in `tailwind.config.ts`:
-```typescript
-colors: {
-  primary: { DEFAULT: '#3ac8c4', foreground: '#ffffff' },
-  secondary: { DEFAULT: '#217371', foreground: '#ffffff' },
-  dark: { DEFAULT: '#091e1d', foreground: '#ffffff' },
-}
-```
-
-### MongoDB Models
-- **Contact** - Contact form submissions
-- **Blog** - Blog posts with categories
-
-### API Endpoints
-- `POST /api/contact` - Submit contact form
-
-## Build & Deployment
-
-### Build for Production
-```bash
-npm run build
-npm start
-```
-
-### Deploy to Vercel
-```bash
-npm install -g vercel
-vercel
-```
-
-### Deploy to Other Platforms
-- Netlify
-- AWS Amplify
-- DigitalOcean
-- Railway
-- Heroku
-
-## Security Features
+## 🔒 Security Features
 
 - Environment variable protection
 - Form validation with Zod
-- MongoDB connection pooling
-- CORS headers configured
-- Rate limiting ready
+- CORS headers ready
+- Rate limiting ready (backend)
 - HTTPS ready for production
+- Secure authentication flow
 
-## SEO & Performance
+## 📈 SEO & Performance
 
-- Meta tags on all pages
-- Open Graph images
-- Structured data ready
-- Mobile responsive
-- Image optimization
-- Code splitting
-- Static generation
+- ✅ Meta tags on all pages
+- ✅ Open Graph images ready
+- ✅ Structured data ready
+- ✅ Mobile responsive
+- ✅ Image optimization
+- ✅ Code splitting
+- ✅ Static generation where possible
 
-## Development
+## 📚 Documentation
 
-### Available Scripts
-```bash
-npm run dev      # Start development server
-npm run build    # Build for production
-npm start        # Start production server
-npm run lint     # Run ESLint
-```
-
-### Code Style
-- TypeScript for type safety
-- ESLint for code quality
-- Prettier for formatting
-- Tailwind CSS for styling
-
-## Documentation
-
-For detailed setup and customization, see [SETUP.md](./SETUP.md)
+### Project Documentation
+- **Backend Requirements**: See `BACKEND_REQUIREMENTS.md` for complete API specifications
+- **Environment Variables**: See `env.example` for all required variables
 
 ### External Resources
-- [Next.js Docs](https://nextjs.org/docs)
-- [Tailwind CSS Docs](https://tailwindcss.com/docs)
-- [Shadcn UI Docs](https://ui.shadcn.com)
-- [MongoDB Docs](https://docs.mongodb.com)
-- [Zod Docs](https://zod.dev)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Shadcn UI Documentation](https://ui.shadcn.com)
+- [React Hook Form](https://react-hook-form.com)
+- [Zod Documentation](https://zod.dev)
 
-## Contributing
+## 🤝 Contributing
 
 This is a proprietary project. For contributions or issues, contact the development team.
 
-## Support
+## 📞 Support
 
 For questions or support:
-- Email: info@vaidhyasewa.com
-- Website: https://vaidhyasewa.com
 
-## License
+- **Email**: codewithsauravphuyal@gmail.com
+- **Additional Email**: sauravphuyal2001@gmail.com
+- **Phone**: +977 9746984367
+- **Address**: Sundarharaincha 03, Gachhiya, Morang, Koshi Province, Nepal
 
-Proprietary - All rights reserved 2024 Vaidhya Sewa
+## 📄 License
+
+Proprietary - All rights reserved © 2024 Vaidhya Sewa
 
 ---
 
-**Built with for modern healthcare management**
+**Built with ❤️ for modern healthcare management**

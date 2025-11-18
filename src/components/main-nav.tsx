@@ -37,7 +37,7 @@ const MainNav = () => {
     {
       href: "/blog",
       label: "Blogs",
-      active: pathname === "/blogs",
+      active: pathname === "/blog",
     },
     {
       href: "/pricing",

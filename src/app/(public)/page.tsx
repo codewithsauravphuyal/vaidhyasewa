@@ -104,7 +104,7 @@ const steps = [
     number: "03",
     title: "Fill Form & Go Live",
     description: "Complete your hospital details and start managing operations efficiently.",
-    link: "/signup",
+    link: "/getstarted",
   },
 ];
 
@@ -891,7 +891,7 @@ export default function Home() {
                           asChild
                           className="w-full bg-teal_700 hover:bg-teal_700/90 text-white_A700 font-semibold py-4 rounded-lg shadow-md"
                         >
-                          <Link href="/signup">Get Started</Link>
+                          <Link href="/getstarted">Get Started</Link>
                         </Button>
                       ) : (
                         <Button
@@ -899,7 +899,7 @@ export default function Home() {
                           variant="outline"
                           className="w-full border-teal_400 text-teal_400 hover:bg-teal_400/10 font-semibold py-4 rounded-lg"
                         >
-                          <Link href="/signup">Get Started</Link>
+                          <Link href="/getstarted">Get Started</Link>
                         </Button>
                       )}
                     </div>

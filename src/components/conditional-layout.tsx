@@ -8,7 +8,8 @@ export function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isLoginPage = pathname === "/login";
   const isSignupPage = pathname === "/signup";
-  const hideHeaderFooter = isLoginPage || isSignupPage;
+  const isAdminPath = pathname?.startsWith("/admin");
+  const hideHeaderFooter = isLoginPage || isSignupPage || Boolean(isAdminPath);
 
   return (
     <div className="relative flex min-h-screen flex-col">

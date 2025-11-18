@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState, useEffect, useRef, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
@@ -47,6 +48,27 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const getStoredAdminUser = useCallback(() => {
+    if (typeof window === "undefined") return null;
+    const stored =
+      window.localStorage.getItem("vaidhya_admin_user") ??
+      window.sessionStorage.getItem("vaidhya_admin_user");
+    if (!stored) return null;
+
+    try {
+      return JSON.parse(stored);
+    } catch {
+      return null;
+    }
+  }, []);
+
+  useEffect(() => {
+    const user = getStoredAdminUser();
+    if (user) {
+      router.replace("/admin/dashboard");
+    }
+  }, [getStoredAdminUser, router]);
   
   // Carousel functionality (from homepage)
   const [isPaused, setIsPaused] = useState(false);
@@ -164,9 +186,27 @@ export default function LoginPage() {
 
     try {
       setLoading(true);
-      // Placeholder - backend integration pending
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      toast.info("Authentication feature coming soon");
+
+      const userPayload = {
+        name: email.split("@")[0] || "Admin User",
+        email,
+        role: "admin",
+        photo: null,
+      };
+
+      if (typeof window !== "undefined") {
+        if (rememberMe) {
+          window.localStorage.setItem("vaidhya_admin_user", JSON.stringify(userPayload));
+          window.sessionStorage.removeItem("vaidhya_admin_user");
+        } else {
+          window.sessionStorage.setItem("vaidhya_admin_user", JSON.stringify(userPayload));
+          window.localStorage.removeItem("vaidhya_admin_user");
+        }
+      }
+
+      toast.success("Logged in as admin");
+      router.push("/admin/dashboard");
     } catch (error) {
       toast.error("Failed to sign in");
     } finally {

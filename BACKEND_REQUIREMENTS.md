@@ -2015,8 +2015,7 @@ Consider implementing:
 ## 10. Contact & Support
 
 For questions or clarifications about this document, contact:
-- **Frontend Developer:** [Your Contact]
-- **Project Manager:** [PM Contact]
+- **Frontend Developer:** Saurav Phuyal [9746984367]
 - **Backend Developer:** [Backend Dev Contact]
 
 ---

@@ -22,6 +22,10 @@ jobs:
     - name: Install dependencies (with dev)
       run: npm ci
 
+    - name: Auditing dependencies (with dev)
+      run: npm audit fix
+
+
     - name: Build application
       # env:
       #   NEXT_PUBLIC_API_BASE_URL : ${{ secrets.NEXT_PUBLIC_API_BASE_URL  }}

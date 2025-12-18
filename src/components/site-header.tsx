@@ -45,7 +45,7 @@ export function SiteHeader() {
           
           <div className="hidden md:flex items-center space-x-6">
             <Button asChild className="bg-teal-600 text-white hover:bg-teal-700 font-semibold text-base">
-              <Link href="/login">Login</Link>
+              <a href="https://app.vaidhyasewa.com" target="blank">Login</a>
             </Button>
           </div>
 
@@ -93,9 +93,9 @@ export function SiteHeader() {
                   ))}
                   <div className="pt-4 border-t space-y-3">
                     <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white" asChild>
-                      <Link href="/login" onClick={() => setOpen(false)}>
+                      <a href="https://app.vaidhyasewa.com" target="blank" onClick={() => setOpen(false)}>
                         Login
-                      </Link>
+                      </a>
                     </Button>
                   </div>
                 </nav>

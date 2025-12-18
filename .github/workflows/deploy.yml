@@ -1,0 +1,94 @@
+name: Deploy to Droplet (Production)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        cache: 'npm'
+
+    - name: Install dependencies (with dev)
+      run: npm ci
+
+    - name: Build application
+      # env:
+      #   NEXT_PUBLIC_API_BASE_URL : ${{ secrets.NEXT_PUBLIC_API_BASE_URL  }}
+      #   NEXT_PUBLIC_GOOGLE_CLIENT_ID: ${{secrets.NEXT_PUBLIC_GOOGLE_CLIENT_ID}}
+      run: npm run build
+
+    - name: Prune devDependencies
+      run: npm prune --production
+
+    - name: Create deployment package
+      run: |
+        mkdir deployment-package
+
+        cp -r .next deployment-package/
+        cp -r public deployment-package/ || true
+        cp -r assets deployment-package/ || true
+        cp -r node_modules deployment-package/
+
+        cp package.json deployment-package/
+        cp ecosystem.config.js deployment-package/
+        cp next.config.ts deployment-package/
+
+        tar -czf deployment.tar.gz -C deployment-package .
+
+    - name: Upload deployment package
+      uses: appleboy/scp-action@v0.1.3
+      with:
+        host: 142.93.210.230
+        username: root
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source: "deployment.tar.gz"
+        target: "/tmp/"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy to server
+      uses: appleboy/ssh-action@v0.1.5
+      with:
+        host: 142.93.210.230
+        username: root
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          set -e
+
+          # Go to your REAL project location
+          cd /mnt/volume_blr1_01/products/hospital/front-site/vaidya-sewa
+
+          # Stop PM2 process
+          pm2 stop /mnt/volume_blr1_01/products/hospital/front-site/vaidya-sewa 2>/dev/null || true
+
+          # Remove old build
+          rm -rf .next node_modules public assets || true
+
+          # Extract new build
+          tar -xzf /tmp/deployment.tar.gz -C .
+
+          # Restart PM2 with correct app name
+          if pm2 describe /mnt/volume_blr1_01/products/hospital/front-site/vaidya-sewa > /dev/null; then
+            pm2 restart ecosystem.config.js --update-env
+          else
+            pm2 start ecosystem.config.js --name /mnt/volume_blr1_01/products/hospital/front-site/vaidya-sewa
+          fi
+
+          # Cleanup
+          rm -f /tmp/deployment.tar.gz
+
+          echo "🚀 Staging deployment completed!"

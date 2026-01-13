@@ -160,7 +160,11 @@ export default function DemoPage() {
       </section>
 
       {/* Try Demo Section */}
+<<<<<<< HEAD
       {/* <section className="py-12 sm:py-16 lg:py-24 bg-white">
+=======
+      <section className="py-12 sm:py-16 lg:py-24 bg-white">
+>>>>>>> a3eb5ca269c8001d82d406e8e0ca130400f1fcb5
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-semibold sm:text-4xl">Try Demo</h2>
@@ -183,7 +187,11 @@ export default function DemoPage() {
             </p>
           </div>
         </div>
+<<<<<<< HEAD
       </section> */}
+=======
+      </section>
+>>>>>>> a3eb5ca269c8001d82d406e8e0ca130400f1fcb5
 
       {/* Screenshots Preview */}
       <section className="py-12 sm:py-16 lg:py-24 bg-bluegray_50">

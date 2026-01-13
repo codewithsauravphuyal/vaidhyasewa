@@ -23,12 +23,21 @@ const config: Config = {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
+<<<<<<< HEAD
           DEFAULT: '#0087ca',
           foreground: '#ffffff',
         },
         secondary: {
           DEFAULT: '#339553',
           foreground: '#ffffff',
+=======
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+>>>>>>> a3eb5ca269c8001d82d406e8e0ca130400f1fcb5
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',

@@ -55,7 +55,11 @@ const MainNav = () => {
     <nav className="flex items-center justify-between w-full">
       <Link href="/" className="flex items-center">
         <div className="relative flex items-center">
+<<<<<<< HEAD
           <Image src="/logo.png" alt="logo" width={170} height={170} />
+=======
+          <Image src="/images/logo.png" alt="logo" width={150} height={150} />
+>>>>>>> a3eb5ca269c8001d82d406e8e0ca130400f1fcb5
         </div>
       </Link>
       <div className="hidden md:flex items-center space-x-8 ml-8">

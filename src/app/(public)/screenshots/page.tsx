@@ -6,7 +6,10 @@ import { Button } from "@/components/ui/button";
 import { X, ZoomIn } from "lucide-react";
 import { Herosection } from "@/components/hero_section";
 import CTA from "@/components/cta_section";
+<<<<<<< HEAD
 import { Title, TitleSmall, SubTitle, Header, SubHeader, H4, Paragraph, ParagraphLarge, Small, Muted, Inline } from "@/components/ui/typography";
+=======
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
 
 const HeroData = {
   subtitle: "Screenshot",
@@ -58,12 +61,21 @@ export default function ScreenshotsPage() {
       <section className="py-8 md:py-16 lg:py-24 bg-gradient-to-b from-primary/5 to-transparent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
+<<<<<<< HEAD
             <Title className="text-primary mb-4">
               Screenshots Gallery
             </Title>
             <ParagraphLarge className="text-muted-foreground max-w-2xl mx-auto">
               Explore all features of Vaidhya Sewa through our comprehensive screenshot gallery
             </ParagraphLarge>
+=======
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+              Screenshots Gallery
+            </h1>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Explore all features of Vaidhya Sewa through our comprehensive screenshot gallery
+            </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           </div>
         </div>
       </section>
@@ -108,10 +120,17 @@ export default function ScreenshotsPage() {
                     {/* <Image src={`/screenshots/${screenshot.id}.jpg`} alt={screenshot.title} fill className="object-cover" /> */}
                   </div>
                   <div className="p-3 sm:p-4">
+<<<<<<< HEAD
                     <H4 className="text-primary leading-tight line-clamp-2">
                       {screenshot.title}
                     </H4>
                     <Small className="text-muted-foreground mt-1">{screenshot.category}</Small>
+=======
+                    <h3 className="font-semibold text-foreground text-sm sm:text-base leading-tight line-clamp-2">
+                      {screenshot.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-1">{screenshot.category}</p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                   </div>
                 </button>
               ))}
@@ -147,12 +166,21 @@ export default function ScreenshotsPage() {
                 <p className="text-muted-foreground text-sm sm:text-base px-4 py-2">Screenshot Preview</p>
               </div>
               <div className="p-4 sm:p-6 md:p-8">
+<<<<<<< HEAD
                 <SubTitle className="text-primary mb-2 sm:mb-3">
                   {selectedImage.title}
                 </SubTitle>
                 <Paragraph className="text-muted-foreground mb-4 sm:mb-6">
                   {selectedImage.description}
                 </Paragraph>
+=======
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2 sm:mb-3 leading-tight">
+                  {selectedImage.title}
+                </h2>
+                <p className="text-muted-foreground text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
+                  {selectedImage.description}
+                </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                 <div className="flex gap-2">
                   <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm font-medium">
                     {selectedImage.category}

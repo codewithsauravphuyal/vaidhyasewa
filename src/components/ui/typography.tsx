@@ -9,7 +9,11 @@ const Title = React.forwardRef<
   <h1
     ref={ref}
     className={cn(
+<<<<<<< HEAD
       "text-2xl font-bold leading-tight tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl",
+=======
+      "text-3xl font-bold leading-tight tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl",
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
       className
     )}
     {...props}
@@ -101,7 +105,11 @@ const ParagraphLarge = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
+<<<<<<< HEAD
     className={cn("text-sm text-muted-foreground leading-relaxed sm:text-base", className)}
+=======
+    className={cn("text-base text-muted-foreground leading-relaxed sm:text-lg", className)}
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
     {...props}
   />
 ))

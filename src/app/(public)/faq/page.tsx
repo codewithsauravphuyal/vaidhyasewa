@@ -6,7 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Plus, Minus } from "lucide-react";
 import { Herosection } from "@/components/hero_section";
 import CTA from "@/components/cta_section";
+<<<<<<< HEAD
 import { Title, TitleSmall, SubTitle, Header, SubHeader, H4, Paragraph, ParagraphLarge, Small, Muted, Inline } from "@/components/ui/typography";
+=======
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
 
 const HeroData = {
   subtitle: "FAQ",
@@ -216,9 +219,15 @@ export default function FAQPage() {
                   }
                   className="w-full p-4 md:p-6 flex items-center justify-between text-left rounded-t-2xl"
                 >
+<<<<<<< HEAD
                   <SubTitle className="text-primary flex-1">
                     {category.name}
                   </SubTitle>
+=======
+                  <h2 className="text-base md:text-lg lg:text-xl font-bold text-foreground flex-1">
+                    {category.name}
+                  </h2>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                   {expandedCategory === category.name ? (
                     <Minus className="h-5 w-5 md:h-6 md:w-6 text-primary transition-transform duration-200" />
                   ) : (
@@ -242,9 +251,15 @@ export default function FAQPage() {
                             }
                             className="w-full flex items-start justify-between gap-3 text-left"
                           >
+<<<<<<< HEAD
                             <H4 className="text-primary flex-1">
                               {faq.q}
                             </H4>
+=======
+                            <h3 className="font-semibold text-foreground flex-1 text-sm md:text-base leading-tight">
+                              {faq.q}
+                            </h3>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                             {expandedFAQ === faqId ? (
                               <Minus className="h-4 w-4 md:h-5 md:w-5 text-primary flex-shrink-0 mt-0.5 transition-transform duration-200" />
                             ) : (
@@ -256,9 +271,15 @@ export default function FAQPage() {
                               expandedFAQ === faqId ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
                             }`}
                           >
+<<<<<<< HEAD
                             <Small className="text-muted-foreground pl-1">
                               {faq.a}
                             </Small>
+=======
+                            <p className="text-muted-foreground text-xs md:text-sm leading-relaxed pl-1">
+                              {faq.a}
+                            </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                           </div>
                         </div>
                       );

@@ -95,6 +95,7 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
   }
 
   return (
+<<<<<<< HEAD
       <div className="py-10 select-none overflow-hidden">
         <div className="relative">
           <div
@@ -151,3 +152,61 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
       </div>
   )
 }
+=======
+    <div className="max-w-6xl mx-auto py-10 select-none">
+      <div className="relative">
+        <div
+          ref={trackRef}
+          className="flex cursor-grab"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => {
+            setIsPaused(false)
+            stopDragging()
+          }}
+          onMouseDown={(e) => handleDown(e.pageX)}
+          onMouseMove={(e) => handleMove(e.pageX)}
+          onMouseUp={stopDragging}
+          onTouchStart={(e) => handleDown(e.touches[0].clientX)}
+          onTouchMove={(e) => handleMove(e.touches[0].clientX)}
+          onTouchEnd={stopDragging}
+        >
+          {infinite.map((t, idx) => (
+            <div
+              key={idx}
+              className="flex-shrink-0 px-3 md:px-4"
+              style={{ width: `${100 / cardsPerView}%` }}
+            >
+              <div className="h-full flex flex-col bg-white rounded-xl shadow-md p-6 md:p-8 relative border border-gray-200">
+                {/* Profile image */}
+                <div className="absolute -top-8 left-6">
+                  <Image
+                    src={t.image}
+                    alt={t.name}
+                    width={61}
+                    height={61}
+                    className="rounded-full border-4 border-white"
+                    unoptimized
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="pt-8 flex flex-col h-full">
+                  <p className="text-base text-gray-600 mb-6 leading-relaxed flex-1">
+                    "{t.text}"
+                  </p>
+
+                  <div className="mt-auto">
+                    <p className="text-lg font-semibold text-gray-900">{t.name}</p>
+                    <p className="text-sm text-gray-500">{t.role}</p>
+                    <p className="text-sm text-teal-700 font-medium">{t.hospital}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6

@@ -4,10 +4,17 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState, useEffect, useRef, useCallback } from "react";
+<<<<<<< HEAD
 import { toast } from "sonner";
 import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
 import { Title, TitleSmall, SubTitle, Header, SubHeader, H4, Paragraph, ParagraphLarge, Small, Muted, Inline } from "@/components/ui/typography";
+=======
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+import Image from "next/image";
+import { Eye, EyeOff } from "lucide-react";
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
 
 const testimonials = [
   {
@@ -48,6 +55,30 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
+<<<<<<< HEAD
+=======
+  const router = useRouter();
+  const getStoredAdminUser = useCallback(() => {
+    if (typeof window === "undefined") return null;
+    const stored =
+      window.localStorage.getItem("vaidhya_admin_user") ??
+      window.sessionStorage.getItem("vaidhya_admin_user");
+    if (!stored) return null;
+
+    try {
+      return JSON.parse(stored);
+    } catch {
+      return null;
+    }
+  }, []);
+
+  useEffect(() => {
+    const user = getStoredAdminUser();
+    if (user) {
+      router.replace("/admin/dashboard");
+    }
+  }, [getStoredAdminUser, router]);
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
   
   // Carousel functionality (from homepage)
   const [isPaused, setIsPaused] = useState(false);
@@ -165,9 +196,33 @@ export default function LoginPage() {
 
     try {
       setLoading(true);
+<<<<<<< HEAD
       // Placeholder - backend integration pending
       await new Promise((resolve) => setTimeout(resolve, 1000));
       toast.info("Authentication feature coming soon");
+=======
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      const userPayload = {
+        name: email.split("@")[0] || "Admin User",
+        email,
+        role: "admin",
+        photo: null,
+      };
+
+      if (typeof window !== "undefined") {
+        if (rememberMe) {
+          window.localStorage.setItem("vaidhya_admin_user", JSON.stringify(userPayload));
+          window.sessionStorage.removeItem("vaidhya_admin_user");
+        } else {
+          window.sessionStorage.setItem("vaidhya_admin_user", JSON.stringify(userPayload));
+          window.localStorage.removeItem("vaidhya_admin_user");
+        }
+      }
+
+      toast.success("Logged in as admin");
+      router.push("/admin/dashboard");
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
     } catch (error) {
       toast.error("Failed to sign in");
     } finally {
@@ -194,12 +249,21 @@ export default function LoginPage() {
       <div className="hidden lg:flex lg:w-1/2 bg-teal_400/10 flex-col justify-between p-8 xl:p-12 relative overflow-hidden">
         <div className="space-y-6 xl:space-y-8 z-10">
           <div className="space-y-3 xl:space-y-4">
+<<<<<<< HEAD
             <Title className="text-primary leading-tight">
               Great let's automate your healthcare.
             </Title>
             <ParagraphLarge className="text-secondary max-w-md">
               Your all-in-one solution to manage your hospital and clinic operations at a single place.
             </ParagraphLarge>
+=======
+            <h1 className="text-4xl xl:text-5xl font-bold text-teal_700 leading-tight">
+              Great let's automate your healthcare.
+            </h1>
+            <p className="text-base xl:text-lg text-teal_600 max-w-md">
+              Your all-in-one solution to manage your hospital and clinic operations at a single place.
+            </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           </div>
 
           {/* Testimonial Carousel - Login Design with Homepage Functionality */}
@@ -279,8 +343,13 @@ export default function LoginPage() {
         <div className="w-full max-w-md space-y-6 sm:space-y-8">
           {/* Header */}
           <div className="space-y-1 sm:space-y-2">
+<<<<<<< HEAD
             <SubTitle className="text-primary">Log in to your Account.</SubTitle>
             <Paragraph className="text-gray_600">Welcome to Vaidhya Sewa.</Paragraph>
+=======
+            <h2 className="text-2xl sm:text-3xl font-bold text-teal_700">Log in to your Account.</h2>
+            <p className="text-sm sm:text-base text-gray_600">Welcome to Vaidhya Sewa.</p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           </div>
 
           {/* Google Sign In Button */}
@@ -391,7 +460,11 @@ export default function LoginPage() {
             <Button
               type="submit"
               disabled={loading}
+<<<<<<< HEAD
               className="w-full h-11 sm:h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm sm:text-base"
+=======
+              className="w-full h-11 sm:h-12 bg-teal_400 hover:bg-teal_700 text-white font-semibold text-sm sm:text-base"
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
             >
               {loading ? "Logging in..." : "Login"}
             </Button>
@@ -400,7 +473,11 @@ export default function LoginPage() {
           {/* Sign Up Link */}
           <p className="text-center text-xs sm:text-sm text-gray_600">
             Don't have an account?{" "}
+<<<<<<< HEAD
             <Link href="/signup" className="text-primary hover:text-primary/80 font-semibold">
+=======
+            <Link href="/signup" className="text-teal_400 hover:text-teal_700 font-semibold">
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
               Sign up
             </Link>
           </p>

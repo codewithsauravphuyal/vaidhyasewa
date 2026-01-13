@@ -5,7 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Calendar, User, FlaskConical, Users, Pill, Scan, UserCheck, CheckCircle2, CreditCard, FileText } from "lucide-react";
 import { Herosection } from "@/components/hero_section";
 import CTA from "@/components/cta_section";
+<<<<<<< HEAD
 import { Title, TitleSmall, SubTitle, Header, SubHeader, H4, Paragraph, ParagraphLarge, Small, Muted, Inline } from "@/components/ui/typography";
+=======
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
 
 export const metadata: Metadata = {
   title: "Features - Vaidhya Sewa",
@@ -169,6 +172,7 @@ export default function FeaturesPage() {
                   key={idx}
                   className="group bg-white rounded-xl shadow-sm border border-gray-100 p-6 sm:p-8 hover:shadow-md transition-all duration-300"
                 >
+<<<<<<< HEAD
                   <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
                     <IconComponent className="h-7 w-7 text-primary" />
                   </div>
@@ -183,6 +187,22 @@ export default function FeaturesPage() {
                           <span className="text-xs font-medium text-primary-foreground">✓</span>
                         </div>
                         <Small className="text-bluegray-700">{detail}</Small>
+=======
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-50 transition-colors group-hover:bg-teal-100">
+                    <IconComponent className="h-7 w-7" style={{ color: iconColor }} />
+                  </div>
+                  <h3 className="mb-4 text-lg font-semibold sm:text-xl">{feature.title}</h3>
+                  <p className="mb-6 text-sm leading-relaxed text-bluegray-500 sm:text-base">
+                    {feature.description}
+                  </p>
+                  <ul className="space-y-2">
+                    {feature.details.map((detail, detailIdx) => (
+                      <li key={detailIdx} className="flex items-start gap-2">
+                        <div className="mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-teal-700">
+                          <span className="text-xs font-medium text-white">✓</span>
+                        </div>
+                        <span className="text-sm text-bluegray-700">{detail}</span>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                       </li>
                     ))}
                   </ul>
@@ -197,10 +217,17 @@ export default function FeaturesPage() {
       <section className="py-12 sm:py-16 lg:py-24 bg-bluegray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-12 max-w-2xl text-center">
+<<<<<<< HEAD
             <SubTitle className="mb-4 text-primary">Key Benefits</SubTitle>
             <ParagraphLarge className="text-bluegray-500">
               Discover how Vaidhya Sewa transforms hospital operations
             </ParagraphLarge>
+=======
+            <h2 className="mb-4 text-3xl font-semibold sm:text-4xl">Key Benefits</h2>
+            <p className="text-base text-bluegray-500 sm:text-lg">
+              Discover how Vaidhya Sewa transforms hospital operations
+            </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {benefits.map((benefit, idx) => (
@@ -208,12 +235,21 @@ export default function FeaturesPage() {
                 key={idx}
                 className="flex gap-4 rounded-xl bg-white p-6 shadow-sm transition-all hover:shadow-md"
               >
+<<<<<<< HEAD
                 <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary">
                   <span className="text-sm font-medium text-primary-foreground">✓</span>
                 </div>
                 <div>
                   <Header className="mb-2 text-primary">{benefit.title}</Header>
                   <Paragraph className="text-bluegray-500">{benefit.description}</Paragraph>
+=======
+                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-teal-700">
+                  <span className="text-sm font-medium text-white">✓</span>
+                </div>
+                <div>
+                  <h3 className="mb-2 text-lg font-semibold">{benefit.title}</h3>
+                  <p className="text-sm text-bluegray-500 sm:text-base">{benefit.description}</p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                 </div>
               </div>
             ))}

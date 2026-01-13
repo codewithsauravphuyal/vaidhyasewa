@@ -8,12 +8,66 @@ import { ArrowRight, Calendar, User, FlaskConical, Users, Pill, Scan, UserCheck,
 import { Herohome } from "@/components/homehero_section";
 import { TestimonialsCarousel } from "@/components/testimonials-carousel";
 import CTA from "@/components/cta_section";
+<<<<<<< HEAD
 import { Title, TitleSmall, SubTitle, Header, SubHeader, H4, Paragraph, ParagraphLarge, Small, Muted, Inline } from "@/components/ui/typography";
 import FeaturesSection from "@/components/features_section";
 import Testimonial from "@/components/testimonial";
 import Trustedby from "@/components/trustedby";
 
 
+=======
+
+const features = [
+  {
+    icon: Calendar,
+    title: "Appointment Management",
+    description: "Efficient appointment scheduling and management system for seamless patient bookings.",
+    color: "teal_700",
+  },
+  {
+    icon: User,
+    title: "Doctor Management",
+    description: "Comprehensive doctor profiles, schedules, and specialization management.",
+    color: "teal_400",
+  },
+  {
+    icon: FlaskConical,
+    title: "Lab Management",
+    description: "Complete laboratory test management and result tracking system.",
+    color: "teal_700",
+  },
+  {
+    icon: Users,
+    title: "Patient Management",
+    description: "Complete patient records, history, and medical information management.",
+    color: "teal_400",
+  },
+  {
+    icon: Pill,
+    title: "Pharmacy Module",
+    description: "Full pharmacy inventory, prescription, and stock management system.",
+    color: "teal_700",
+  },
+  {
+    icon: Scan,
+    title: "Radiology",
+    description: "Radiology imaging, reports, and diagnostic management system.",
+    color: "teal_400",
+  },
+  {
+    icon: UserCheck,
+    title: "Reception",
+    description: "Front desk operations, patient registration, and queue management.",
+    color: "teal_700",
+  },
+  {
+    icon: CheckCircle2,
+    title: "OPD/IPD Management",
+    description: "Outpatient and inpatient department management with admission tracking.",
+    color: "teal_400",
+  },
+];
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
 
 const benefits = [
   {
@@ -90,6 +144,60 @@ const howItWorks = [
   },
 ];
 
+<<<<<<< HEAD
+=======
+const testimonials = [
+  {
+    name: "Dr. Sarah Johnson",
+    role: "Hospital Administrator",
+    hospital: "City General Hospital",
+    image: "/images/img_ellipse70.png",
+    text: "Vaidhya Sewa has transformed our hospital operations. The system is intuitive, efficient, and has significantly improved our patient care quality.",
+    rating: 5,
+  },
+  {
+    name: "Dr. Rajesh Kumar",
+    role: "Chief Medical Officer",
+    hospital: "Metro Healthcare",
+    image: "/images/img_ellipse70_1.png",
+    text: "Excellent hospital management solution. Our staff adapted quickly and patient satisfaction improved significantly. Highly recommended!",
+    rating: 5,
+  },
+  {
+    name: "Priya Sharma",
+    role: "Operations Manager",
+    hospital: "Sunrise Clinic",
+    image: "/images/img_ellipse70_2.png",
+    text: "The best investment we made for our hospital. Streamlined operations, better patient care, and excellent customer support.",
+    rating: 5,
+  },
+  {
+    name: "Anil Thapa",
+    role: "IT Manager",
+    hospital: "Everest Care Hospital",
+    image: "/images/img_ellipse70.png",
+    text: "Easy to use and perfectly fits our workflow. The support team is very responsive and helpful.",
+    rating: 5,
+  },
+  {
+    name: "Dr. Meera Shrestha",
+    role: "Medical Director",
+    hospital: "Green Valley Clinic",
+    image: "/images/img_ellipse70_1.png",
+    text: "We now have clear visibility into every department. Reporting and billing have become much smoother.",
+    rating: 5,
+  },
+  {
+    name: "Ramesh Karki",
+    role: "Administrator",
+    hospital: "Himalayan Health Center",
+    image: "/images/img_ellipse70_2.png",
+    text: "Implementation was quick and the team guided us throughout. Highly recommended for any clinic or hospital.",
+    rating: 5,
+  },
+];
+
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
 const whyChooseUs = [
   "Trusted by 500+ hospitals across Nepal",
   "99.9% uptime guarantee",
@@ -413,24 +521,271 @@ const faqCategories = [
 export default function Home() {
   const [expandedFAQ, setExpandedFAQ] = useState<string | null>(null);
   const [expandedCategory, setExpandedCategory] = useState<string | null>(faqCategories[0]?.name || null);
+<<<<<<< HEAD
 
   return (
     <>
+=======
+  // const [showMaintenancePopup, setShowMaintenancePopup] = useState(true);
+
+  // useEffect(() => {
+  //   // Show popup on initial load
+  //   setShowMaintenancePopup(true);
+  // }, []);
+
+  // const handleClosePopup = () => {
+  //   setShowMaintenancePopup(false);
+  // };
+
+  // if (showMaintenancePopup) {
+  //   return (
+  //     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+  //       <div className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto shadow-xl">
+  //         <div className="p-6">
+  //           <div className="flex justify-end mb-4">
+  //             <button
+  //               onClick={handleClosePopup}
+  //               className="text-gray-500 hover:text-gray-700 transition-colors"
+  //             >
+  //               <X className="h-5 w-5" />
+  //             </button>
+  //           </div>
+  //           <div className="text-center mb-6">
+  //             <h2 className="text-2xl font-bold text-bluegray_900 mb-2">Under Maintenance</h2>
+  //             <p className="text-bluegray_600 mb-6">
+  //               Sorry for the inconvenience, we're currently performing maintenance. We'll be back shortly!
+  //             </p>
+  //             <p className="text-sm text-bluegray_700 mb-6">
+  //               For more info, contact Youth IT or Vaidhya Sewa for demo and to get started.
+  //             </p>
+  //           </div>
+  //           <div className="space-y-4 text-sm">
+  //             <div>
+  //               <h3 className="font-semibold text-bluegray_900 mb-2">Email</h3>
+  //               <ul className="space-y-1 text-bluegray_600">
+  //                 <li>info@vaidhyasewa.com</li>
+  //                 <li>support@vaidhyasewa.com</li>
+  //                 <li>hamroyouthit@gmail.com</li>
+  //               </ul>
+  //             </div>
+  //             <div>
+  //               <h3 className="font-semibold text-bluegray_900 mb-2">Phone</h3>
+  //               <ul className="space-y-1 text-bluegray_600">
+  //                 <li>+977 9746888890</li>
+  //                 <li>+977 9741776222</li>
+  //               </ul>
+  //             </div>
+  //             <div>
+  //               <h3 className="font-semibold text-bluegray_900 mb-2">Address</h3>
+  //               <p className="text-bluegray_600">Itahari-06 Pragati Marga, Sunsari, Koshi Province, Nepal</p>
+  //             </div>
+  //             <div>
+  //               <h3 className="font-semibold text-bluegray_900 mb-2">Office Hours</h3>
+  //               <ul className="space-y-1 text-bluegray_600">
+  //                 <li>Sunday - Friday: 10:00 AM - 6:00 PM</li>
+  //                 <li>Saturday: 10:00 AM - 4:00 PM</li>
+  //               </ul>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
+  return (
+    <div className="w-full bg-white_A700 font-poppins">
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
       {/* Hero Section */}
       <Herohome />
 
       {/* Features Section */}
+<<<<<<< HEAD
       <FeaturesSection />
 
       {/* Testimonials Section */}
       <Testimonial />
       {/*Trusted by*/}
       <Trustedby />
+=======
+      <section className="relative py-20 md:py-28 bg-white_A700 overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="space-y-8 lg:order-1">
+              <div className="space-y-4">
+                <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg">
+                  Awesome Features
+                </p>
+                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-semibold text-bluegray_900 leading-tight">
+                  Efficient Solutions for Streamlined Business Management
+                </h2>
+                <p className="text-base md:text-lg text-bluegray_500 max-w-lg leading-relaxed">
+                  Efficiently track, manage, and optimize your hospital operations with our comprehensive management system.
+                </p>
+              </div>
+              <div className="relative">
+                <div className="relative p-2">
+                  <div className="bg-black_900 rounded-t-[22px] max-w-[250px] sm:max-w-[250px] md:max-w-[500px] mx-auto rounded-b-0 p-2 md:p-3">
+                    <Image
+                      src="/images/vaidhyasewadashboard.png"
+                      alt="Dashboard Preview"
+                      width={400}
+                      height={367}
+                      className="w-full h-auto rounded-lg max-w-[250px] sm:max-w-[250px] md:max-w-[500px] mx-auto"
+                      unoptimized
+                    />
+                  </div>
+                  <Image
+                    src="/images/img_bottom.png"
+                    alt="bottom"
+                    width={400}
+                    height={21}
+                    className="w-full h-auto"
+                    unoptimized
+                  />
+                </div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] sm:w-[80%] md:w-[90%] h-[7px] bg-black_900 blur-[30px] md:blur-[44px] rounded-full opacity-50"></div>
+              </div>
+            </div>
+            <div className="lg:order-2">
+              <div className="grid md:grid-cols-2 gap-3 lg:gap-4">
+                {features.map((feature, idx) => {
+                  const IconComponent = feature.icon;
+                  const iconColor = feature.color === "teal_700" ? "#006d77" : "#25a6b2";
+                  return (
+                    <div key={idx} className="bg-white_A700 rounded-xl shadow-bs2 p-3 md:p-4 hover:shadow-lg transition-all group border border-transparent hover:border-teal_400/20">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-teal_50 flex items-center justify-center mb-3 md:mb-4 group-hover:bg-teal_100 transition-colors">
+                        <IconComponent className="h-5 w-5 md:h-6 md:w-6" style={{ color: iconColor }} />
+                      </div>
+                      <h3 className="text-sm md:text-base font-semibold text-bluegray_900 mb-1 md:mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-xs text-bluegray_500 leading-tight">
+                        {feature.description}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What's the Function / How It Works */}
+      <section className="relative py-20 md:py-28 bg-bluegray_50 overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg mb-4">
+              WHAT'S THE FUNCTION
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-semibold text-bluegray_900 mb-6 leading-tight">
+              Let's see how it works
+            </h2>
+            <p className="text-base md:text-lg text-bluegray_500 max-w-2xl mx-auto leading-relaxed">
+              Vaidhya Sewa - The trusted hospital management solution for your business.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {howItWorks.map((step, idx) => {
+              const IconComponent = step.icon;
+              return (
+                <div key={idx} className="bg-white_A700 rounded-xl p-6 md:p-8 hover:shadow-lg transition-all border border-gray_100 text-center">
+                  <div className="w-14 h-14 rounded-full bg-teal_700 flex items-center justify-center mx-auto mb-6">
+                    <IconComponent className="h-8 w-8 text-white_A700" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-bluegray_900">{step.title}</h3>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="relative py-20 md:py-28 bg-white_A700 overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg mb-4">
+              Testimonials
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-semibold text-bluegray_900 mb-6 leading-tight">
+              What our trusted clients say
+            </h2>
+            <p className="text-base md:text-lg text-bluegray_500 max-w-2xl mx-auto leading-relaxed">
+              Hear from hospitals and clinics that have transformed their operations with Vaidhya Sewa.
+            </p>
+          </div>
+          <TestimonialsCarousel testimonials={testimonials} />
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="relative py-20 md:py-28 bg-bluegray_50 overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg mb-4">
+              Why Choose Vaidhya Sewa
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-semibold text-bluegray_900 mb-6 leading-tight">
+              Transform Your Hospital Operations
+            </h2>
+            <p className="text-base md:text-lg text-bluegray_500 max-w-3xl mx-auto leading-relaxed">
+              Experience the power of modern hospital management with features designed to improve efficiency and patient care.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
+            {benefits.map((benefit, idx) => {
+              const IconComponent = benefit.icon;
+              const iconColor = benefit.color === "teal_700" ? "#006d77" : "#25a6b2";
+              return (
+                <div key={idx} className="text-center p-6">
+                  <div className="w-20 h-20 rounded-full bg-teal_50 flex items-center justify-center mx-auto mb-6">
+                    <IconComponent className="h-10 w-10" style={{ color: iconColor }} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-bluegray_900 mb-3">{benefit.title}</h3>
+                  <p className="text-bluegray_500 leading-relaxed">{benefit.description}</p>
+                </div>
+              );
+            })}
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="bg-bluegray_50 rounded-xl p-8">
+              <h3 className="text-xl font-semibold text-bluegray_900 mb-6">Key Advantages</h3>
+              <ul className="space-y-4">
+                {whyChooseUs.slice(0, 4).map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-teal_700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-white_A700 text-xs">✓</span>
+                    </div>
+                    <span className="text-bluegray_700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-bluegray_50 rounded-xl p-8">
+              <h3 className="text-xl font-semibold text-bluegray_900 mb-6">More Benefits</h3>
+              <ul className="space-y-4">
+                {whyChooseUs.slice(4, 8).map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-teal_700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-white_A700 text-xs">✓</span>
+                    </div>
+                    <span className="text-bluegray_700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
 
       {/* Simple Steps to Get Started */}
       <section className="relative py-20 md:py-28 bg-white_A700 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
+<<<<<<< HEAD
             <Muted className="text-primary font-medium text-sm md:text-base lg:text-lg mb-4">
               Get Started
             </Muted>
@@ -440,17 +795,37 @@ export default function Home() {
             <ParagraphLarge className="text-bluegray_500 max-w-2xl mx-auto">
               Get started with Vaidhya Sewa in just a few simple steps and transform your hospital management experience.
             </ParagraphLarge>
+=======
+            <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg mb-4">
+              Get Started
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-semibold text-bluegray_900 mb-6 leading-tight">
+              Simple Steps to Get Started
+            </h2>
+            <p className="text-base md:text-lg text-bluegray_500 max-w-2xl mx-auto leading-relaxed">
+              Get started with Vaidhya Sewa in just a few simple steps and transform your hospital management experience.
+            </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {steps.map((step, index) => (
               <div key={index} className="bg-white_A700 rounded-xl shadow-bs2 p-8 text-center hover:shadow-lg transition-all border border-transparent hover:border-teal_400/20">
+<<<<<<< HEAD
                 <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-3xl font-bold text-primary-foreground">{step.number}</span>
                 </div>
                 <Header className="text-primary mb-3">{step.title}</Header>
                 <Paragraph className="text-bluegray_500 mb-6">{step.description}</Paragraph>
                 <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
+=======
+                <div className="w-20 h-20 bg-teal_700 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-3xl font-bold text-white_A700">{step.number}</span>
+                </div>
+                <h3 className="text-xl font-semibold text-bluegray_900 mb-3">{step.title}</h3>
+                <p className="text-bluegray_500 text-base mb-6 leading-relaxed">{step.description}</p>
+                <Button asChild className="bg-teal_700 hover:bg-teal_700/90 text-white_A700 font-semibold">
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                   <Link href={step.link}>
                     Get Started <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -465,6 +840,7 @@ export default function Home() {
       <section className="relative py-20 md:py-28 bg-bluegray_50 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
+<<<<<<< HEAD
             <Muted className="text-primary font-medium text-sm md:text-base lg:text-lg mb-4">
               Pricing & Plans
             </Muted>
@@ -474,6 +850,17 @@ export default function Home() {
             <ParagraphLarge className="text-bluegray_500 max-w-2xl mx-auto">
               Choose the perfect plan for your hospital. All plans include 30-day free trial.
             </ParagraphLarge>
+=======
+            <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg mb-4">
+              Pricing & Plans
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-semibold text-bluegray_900 mb-6 leading-tight">
+              Our pricing plans suits your every need
+            </h2>
+            <p className="text-base md:text-lg text-bluegray_500 max-w-2xl mx-auto leading-relaxed">
+              Choose the perfect plan for your hospital. All plans include 30-day free trial.
+            </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           </div>
 
           {/* Pricing Cards */}
@@ -562,7 +949,11 @@ export default function Home() {
                       {plan.highlighted ? (
                         <Button
                           asChild
+<<<<<<< HEAD
                           className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 rounded-lg shadow-md"
+=======
+                          className="w-full bg-teal_700 hover:bg-teal_700/90 text-white_A700 font-semibold py-4 rounded-lg shadow-md"
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                         >
                           <Link href="/getstarted">Get Started</Link>
                         </Button>
@@ -570,7 +961,11 @@ export default function Home() {
                         <Button
                           asChild
                           variant="outline"
+<<<<<<< HEAD
                           className="w-full border-secondary text-secondary hover:bg-secondary/10 font-semibold py-4 rounded-lg"
+=======
+                          className="w-full border-teal_400 text-teal_400 hover:bg-teal_400/10 font-semibold py-4 rounded-lg"
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                         >
                           <Link href="/getstarted">Get Started</Link>
                         </Button>
@@ -588,6 +983,7 @@ export default function Home() {
       <section className="relative py-20 md:py-28 bg-white_A700 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
+<<<<<<< HEAD
             <Muted className="text-primary font-medium text-sm md:text-base lg:text-lg mb-4">
               FAQ
             </Muted>
@@ -600,6 +996,20 @@ export default function Home() {
             <Paragraph className="text-bluegray_500 max-w-2xl mx-auto mb-12">
               Still confused? Feel free to contact us.
             </Paragraph>
+=======
+            <p className="text-blue_A400 font-medium text-sm md:text-base lg:text-lg mb-4">
+              FAQ
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-semibold text-bluegray_900 mb-6 leading-tight">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-base md:text-lg text-bluegray_500 max-w-2xl mx-auto mb-4 leading-relaxed">
+              Answered all frequently asked questions
+            </p>
+            <p className="text-base text-bluegray_500 max-w-2xl mx-auto mb-12">
+              Still confused? Feel free to contact us.
+            </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           </div>
           {/* FAQ Accordion */}
           <div className="grid gap-4 md:gap-2 lg:gap-2 mb-8">
@@ -616,6 +1026,7 @@ export default function Home() {
                   }
                   className="w-full p-4 md:p-6 flex items-center justify-between text-left rounded-t-2xl"
                 >
+<<<<<<< HEAD
                   <SubTitle className="text-primary flex-1">
                     {category.name}
                   </SubTitle>
@@ -623,12 +1034,27 @@ export default function Home() {
                     <Minus className="h-5 w-5 md:h-6 md:w-6 text-primary transition-transform duration-200" />
                   ) : (
                     <Plus className="h-5 w-5 md:h-6 md:w-6 text-primary transition-transform duration-200" />
+=======
+                  <h2 className="text-base md:text-lg lg:text-xl font-bold text-bluegray-900 flex-1">
+                    {category.name}
+                  </h2>
+                  {expandedCategory === category.name ? (
+                    <Minus className="h-5 w-5 md:h-6 md:w-6 text-teal-700 transition-transform duration-200" />
+                  ) : (
+                    <Plus className="h-5 w-5 md:h-6 md:w-6 text-teal-700 transition-transform duration-200" />
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                   )}
                 </button>
 
                 <div
+<<<<<<< HEAD
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedCategory === category.name ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
                     }`}
+=======
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    expandedCategory === category.name ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
+                  }`}
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                 >
                   <div className="divide-y divide-gray-200/50">
                     {category.faqs.map((faq, idx) => {
@@ -641,6 +1067,7 @@ export default function Home() {
                             }
                             className="w-full flex items-start justify-between gap-3 text-left"
                           >
+<<<<<<< HEAD
                             <H4 className="text-primary flex-1">
                               {faq.q}
                             </H4>
@@ -657,6 +1084,25 @@ export default function Home() {
                             <Small className="text-bluegray-500 pl-1">
                               {faq.a}
                             </Small>
+=======
+                            <h3 className="font-semibold text-bluegray-900 flex-1 text-sm md:text-base leading-tight">
+                              {faq.q}
+                            </h3>
+                            {expandedFAQ === faqId ? (
+                              <Minus className="h-4 w-4 md:h-5 md:w-5 text-teal-700 flex-shrink-0 mt-0.5 transition-transform duration-200" />
+                            ) : (
+                              <Plus className="h-4 w-4 md:h-5 md:w-5 text-teal-700 flex-shrink-0 mt-0.5 transition-transform duration-200" />
+                            )}
+                          </button>
+                          <div
+                            className={`mt-3 overflow-hidden transition-all duration-300 ease-in-out ${
+                              expandedFAQ === faqId ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
+                            }`}
+                          >
+                            <p className="text-bluegray-500 text-xs md:text-sm leading-relaxed pl-1">
+                              {faq.a}
+                            </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                           </div>
                         </div>
                       );
@@ -671,6 +1117,11 @@ export default function Home() {
 
       {/* Final CTA Section */}
       <CTA />
+<<<<<<< HEAD
     </>
+=======
+
+    </div>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
   );
 }

@@ -6,7 +6,10 @@ import { Lock, User, Calendar, ExternalLink } from "lucide-react";
 import { Herosection } from "@/components/hero_section";
 import DemoCard from "./components/DemoCard";
 import CTA from "@/components/cta_section";
+<<<<<<< HEAD
 import { Title, TitleSmall, SubTitle, Header, SubHeader, H4, Paragraph, ParagraphLarge, Small, Muted, Inline } from "@/components/ui/typography";
+=======
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
 
 export const metadata: Metadata = {
   title: "Services - Vaidhya Sewa",
@@ -93,7 +96,11 @@ export default function DemoPage() {
       <section className="py-12 sm:py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
+<<<<<<< HEAD
             <SubTitle className="mb-8 text-center text-primary">Demo Video</SubTitle>
+=======
+            <h2 className="mb-8 text-center text-3xl font-semibold sm:text-4xl">Demo Video</h2>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
             <div className="relative flex aspect-video items-center justify-center overflow-hidden rounded-lg bg-teal-400 border border-teal-400 shadow-lg">
               <div className="text-center">
                 <Image
@@ -107,9 +114,15 @@ export default function DemoPage() {
                 <p className="text-lg font-bold tracking-wider text-white">WATCH VIDEO</p>
               </div>
             </div>
+<<<<<<< HEAD
             <Small className="mt-4 text-center text-bluegray-500">
               Video duration: ~3 minutes | Covers all major features and workflows
             </Small>
+=======
+            <p className="mt-4 text-center text-sm text-bluegray-500 sm:text-base">
+              Video duration: ~3 minutes | Covers all major features and workflows
+            </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           </div>
         </div>
       </section>
@@ -119,6 +132,7 @@ export default function DemoPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
             <div className="mb-12 text-center">
+<<<<<<< HEAD
               <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary">
                 <Calendar className="h-8 w-8 text-primary-foreground" />
               </div>
@@ -126,16 +140,34 @@ export default function DemoPage() {
               <ParagraphLarge className="mx-auto max-w-2xl text-bluegray-500">
                 Schedule a personalized demo with our team. We'll show you how Vaidhya Sewa can transform your hospital operations.
               </ParagraphLarge>
+=======
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-teal-700">
+                <Calendar className="h-8 w-8 text-white" />
+              </div>
+              <h2 className="mb-4 text-3xl font-semibold sm:text-4xl">Book Your Demo</h2>
+              <p className="mx-auto max-w-2xl text-base text-bluegray-500 sm:text-lg">
+                Schedule a personalized demo with our team. We'll show you how Vaidhya Sewa can transform your hospital operations.
+              </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
             </div>
             <div className="rounded-lg bg-white p-6 sm:p-8 md:p-12 shadow-sm">
               <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-2">
                 <div>
+<<<<<<< HEAD
                   <Header className="mb-4 text-primary">What to Expect</Header>
                   <ul className="space-y-3">
                     {demoExpectations.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <div className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary">
                           <span className="text-xs text-primary-foreground">✓</span>
+=======
+                  <h3 className="mb-4 text-xl font-semibold">What to Expect</h3>
+                  <ul className="space-y-3">
+                    {demoExpectations.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <div className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-teal-700">
+                          <span className="text-xs text-white">✓</span>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                         </div>
                         <span className="text-bluegray-700">{item}</span>
                       </li>
@@ -143,6 +175,7 @@ export default function DemoPage() {
                   </ul>
                 </div>
                 <div>
+<<<<<<< HEAD
                   <Header className="mb-4 text-primary">Demo Duration</Header>
                   <Paragraph className="mb-4 text-bluegray-700">30-45 minutes</Paragraph>
                   <Header className="mb-4 text-primary">Available Times</Header>
@@ -152,6 +185,17 @@ export default function DemoPage() {
               </div>
               <div className="text-center">
                 <Button asChild size="lg" className="bg-primary hover:bg-primary/90 font-semibold shadow-md text-primary-foreground">
+=======
+                  <h3 className="mb-4 text-xl font-semibold">Demo Duration</h3>
+                  <p className="mb-4 text-bluegray-700">30-45 minutes</p>
+                  <h3 className="mb-4 text-xl font-semibold">Available Times</h3>
+                  <p className="text-bluegray-700">Monday - Friday: 9 AM - 6 PM</p>
+                  <p className="text-bluegray-700">Saturday: 10 AM - 2 PM</p>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild size="lg" className="bg-teal-700 hover:bg-teal-700/90 font-semibold shadow-md text-white">
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                   <Link href="/contact">Schedule Your Demo</Link>
                 </Button>
               </div>
@@ -161,7 +205,15 @@ export default function DemoPage() {
       </section>
 
       {/* Try Demo Section */}
+<<<<<<< HEAD
       {/* <section className="py-12 sm:py-16 lg:py-24 bg-white">
+=======
+<<<<<<< HEAD
+      {/* <section className="py-12 sm:py-16 lg:py-24 bg-white">
+=======
+      <section className="py-12 sm:py-16 lg:py-24 bg-white">
+>>>>>>> a3eb5ca269c8001d82d406e8e0ca130400f1fcb5
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-semibold sm:text-4xl">Try Demo</h2>
@@ -184,16 +236,31 @@ export default function DemoPage() {
             </p>
           </div>
         </div>
+<<<<<<< HEAD
       </section> */}
+=======
+<<<<<<< HEAD
+      </section> */}
+=======
+      </section>
+>>>>>>> a3eb5ca269c8001d82d406e8e0ca130400f1fcb5
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
 
       {/* Screenshots Preview */}
       <section className="py-12 sm:py-16 lg:py-24 bg-bluegray_50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
+<<<<<<< HEAD
             <SubTitle className="mb-4 text-primary">Screenshots Gallery</SubTitle>
             <ParagraphLarge className="mx-auto max-w-2xl text-bluegray-500">
               Explore our system through detailed screenshots
             </ParagraphLarge>
+=======
+            <h2 className="mb-4 text-3xl font-semibold sm:text-4xl">Screenshots Gallery</h2>
+            <p className="mx-auto max-w-2xl text-base text-bluegray-500 sm:text-lg">
+              Explore our system through detailed screenshots
+            </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           </div>
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
             {screenshotItems.map((title, idx) => (
@@ -207,9 +274,15 @@ export default function DemoPage() {
             ))}
           </div>
           <div className="mt-8 text-center">
+<<<<<<< HEAD
                 <Button asChild variant="outline" size="lg" className="border-secondary text-secondary hover:bg-secondary/10">
                   <Link href="/screenshots">View Full Gallery</Link>
                 </Button>
+=======
+            <Button asChild variant="outline" size="lg" className="border-teal-400 text-teal-400 hover:bg-teal-400/10">
+              <Link href="/screenshots">View Full Gallery</Link>
+            </Button>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           </div>
         </div>
       </section>

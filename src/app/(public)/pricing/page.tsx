@@ -4,7 +4,10 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import CTA from "@/components/cta_section";
 import { Herosection } from "@/components/hero_section";
+<<<<<<< HEAD
 import { Title, TitleSmall, SubTitle, Header, SubHeader, H4, Paragraph, ParagraphLarge, Small, Muted, Inline } from "@/components/ui/typography";
+=======
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
 
 export const metadata: Metadata = {
   title: "Pricing - Vaidhya Sewa",
@@ -246,7 +249,11 @@ export default function PricingPage() {
                       {plan.highlighted ? (
                         <Button
                           asChild
+<<<<<<< HEAD
                           className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 rounded-lg shadow-md"
+=======
+                          className="w-full bg-teal_700 hover:bg-teal_700/90 text-white_A700 font-semibold py-4 rounded-lg shadow-md"
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                         >
                           <Link href="/signup">Get Started</Link>
                         </Button>
@@ -254,7 +261,11 @@ export default function PricingPage() {
                         <Button
                           asChild
                           variant="outline"
+<<<<<<< HEAD
                           className="w-full border-secondary text-secondary hover:bg-secondary/10 font-semibold py-4 rounded-lg"
+=======
+                          className="w-full border-teal_400 text-teal_400 hover:bg-teal_400/10 font-semibold py-4 rounded-lg"
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                         >
                           <Link href="/signup">Get Started</Link>
                         </Button>

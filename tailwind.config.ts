@@ -23,12 +23,27 @@ const config: Config = {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           DEFAULT: '#0087ca',
           foreground: '#ffffff',
         },
         secondary: {
           DEFAULT: '#339553',
           foreground: '#ffffff',
+<<<<<<< HEAD
+=======
+=======
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+>>>>>>> a3eb5ca269c8001d82d406e8e0ca130400f1fcb5
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
@@ -50,6 +65,19 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+<<<<<<< HEAD
+=======
+        sidebar: {
+          DEFAULT: 'hsl(var(--sidebar-background))',
+          foreground: 'hsl(var(--sidebar-foreground))',
+          primary: 'hsl(var(--sidebar-primary))',
+          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+          accent: 'hsl(var(--sidebar-accent))',
+          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+          border: 'hsl(var(--sidebar-border))',
+          ring: 'hsl(var(--sidebar-ring))',
+        },
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
         dark: {
           DEFAULT: '#091e1d',
           foreground: '#ffffff',

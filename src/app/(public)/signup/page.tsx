@@ -7,7 +7,10 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { toast } from "sonner";
 import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
+<<<<<<< HEAD
 import { Title, TitleSmall, SubTitle, Header, SubHeader, H4, Paragraph, ParagraphLarge, Small, Muted, Inline } from "@/components/ui/typography";
+=======
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
 
 const testimonials = [
   {
@@ -216,12 +219,21 @@ export default function SignupPage() {
       <div className="hidden lg:flex lg:w-1/2 bg-teal_400/10 flex-col justify-between p-8 xl:p-12 relative overflow-hidden">
         <div className="space-y-6 xl:space-y-8 z-10">
           <div className="space-y-3 xl:space-y-4">
+<<<<<<< HEAD
             <Title className="text-primary leading-tight">
               Start your journey with Vaidhya Sewa.
             </Title>
             <ParagraphLarge className="text-secondary max-w-md">
               Join hundreds of hospitals already using our comprehensive management system to streamline their operations.
             </ParagraphLarge>
+=======
+            <h1 className="text-4xl xl:text-5xl font-bold text-teal_700 leading-tight">
+              Start your journey with Vaidhya Sewa.
+            </h1>
+            <p className="text-base xl:text-lg text-teal_600 max-w-md">
+              Join hundreds of hospitals already using our comprehensive management system to streamline their operations.
+            </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           </div>
 
           {/* Testimonial Carousel */}
@@ -300,8 +312,13 @@ export default function SignupPage() {
         <div className="w-full max-w-md space-y-6 sm:space-y-8">
           {/* Header */}
           <div className="space-y-1 sm:space-y-2">
+<<<<<<< HEAD
             <SubTitle className="text-primary">Create your Account.</SubTitle>
             <Paragraph className="text-gray_600">Join Vaidhya Sewa today and transform your hospital operations.</Paragraph>
+=======
+            <h2 className="text-2xl sm:text-3xl font-bold text-teal_700">Create your Account.</h2>
+            <p className="text-sm sm:text-base text-gray_600">Join Vaidhya Sewa today and transform your hospital operations.</p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           </div>
 
           {/* Google Sign Up Button */}
@@ -455,7 +472,11 @@ export default function SignupPage() {
             <Button
               type="submit"
               disabled={loading}
+<<<<<<< HEAD
               className="w-full h-11 sm:h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm sm:text-base"
+=======
+              className="w-full h-11 sm:h-12 bg-teal_400 hover:bg-teal_700 text-white font-semibold text-sm sm:text-base"
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
             >
               {loading ? "Creating account..." : "Sign Up"}
             </Button>
@@ -464,7 +485,11 @@ export default function SignupPage() {
           {/* Login Link */}
           <p className="text-center text-xs sm:text-sm text-gray_600">
             Already have an account?{" "}
+<<<<<<< HEAD
             <Link href="/login" className="text-primary hover:text-primary/80 font-semibold">
+=======
+            <Link href="/login" className="text-teal_400 hover:text-teal_700 font-semibold">
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
               Log in
             </Link>
           </p>

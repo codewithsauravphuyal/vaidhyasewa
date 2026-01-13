@@ -9,7 +9,10 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { MessageCircle, Phone, Mail, MapPin, Clock10, CheckCircle, Settings, Link2, UserCheck, Fingerprint, Handshake } from "lucide-react";
 import { toast } from "sonner";
 import { Herosection } from "@/components/hero_section";
+<<<<<<< HEAD
 import { Title, TitleSmall, SubTitle, Header, SubHeader, H4, Paragraph, ParagraphLarge, Small, Muted, Inline } from "@/components/ui/typography";
+=======
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
 
 const ContactPage = () => {
   const [loading, setLoading] = useState(false);
@@ -146,7 +149,11 @@ const ContactPage = () => {
             {/* Contact Form */}
             <div>
               <div className="border border-white rounded-lg p-6 bg-white shadow-sm">
+<<<<<<< HEAD
                 <SubTitle className="text-primary mb-8">Send us a Message</SubTitle>
+=======
+                <h2 className="text-2xl font-bold text-dark mb-8">Send us a Message</h2>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
@@ -252,13 +259,21 @@ const ContactPage = () => {
 
             {/* Contact Info */}
             <div className="mt-6">
+<<<<<<< HEAD
               <SubTitle className="text-primary mb-8">Contact Information</SubTitle>
+=======
+              <h2 className="text-2xl font-bold text-dark mb-8">Contact Information</h2>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
               <div className="space-y-8">
                 {contactInfo.map(({ icon: Icon, title, items }, index) => (
                   <div key={index} className="flex gap-4">
                     <Icon className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <div>
+<<<<<<< HEAD
                       <H4 className="text-primary mb-1">{title}</H4>
+=======
+                      <h3 className="font-semibold text-dark mb-1">{title}</h3>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                       {items.map((item, itemIndex) => (
                         <p key={itemIndex} className="text-muted-foreground">
                           {item}
@@ -268,7 +283,11 @@ const ContactPage = () => {
                   </div>
                 ))}
                 <div className="pt-8 border-t">
+<<<<<<< HEAD
                   <H4 className="text-primary mb-4">Quick Links</H4>
+=======
+                  <h3 className="font-semibold text-dark mb-4">Quick Links</h3>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                   <div className="space-y-3">
                     {quickLinks.map(({ href, label }, index) => (
                       <a
@@ -286,7 +305,11 @@ const ContactPage = () => {
                 </div>
 
                 <div className="pt-8 border-t">
+<<<<<<< HEAD
                   <H4 className="text-primary mb-4">Follow us</H4>
+=======
+                  <h3 className="font-semibold text-dark mb-4">Follow us</h3>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                   <div className="space-y-3">
                     <div className="flex mt-4 sm:mt-0 gap-4 justify-center sm:justify-start">
                       <a href="#" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
@@ -321,10 +344,17 @@ const ContactPage = () => {
       {/* Need Support Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6">
+<<<<<<< HEAD
           <SubTitle className="text-primary text-center mb-4">Need support?</SubTitle>
           <ParagraphLarge className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
             Want answer right away? Select your reference below for answers.
           </ParagraphLarge>
+=======
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-4">Need support?</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Want answer right away? Select your reference below for answers.
+          </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {supportCards.map(({ icon: Icon, color, title, description }, index) => {
               const colorClasses = {
@@ -342,8 +372,13 @@ const ContactPage = () => {
                   <div className={`mb-4 p-2 bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-sm`}>
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
+<<<<<<< HEAD
                   <Header className="text-primary mb-2">{title}</Header>
                   <Small className="leading-relaxed">{description}</Small>
+=======
+                  <h3 className="font-semibold mb-2 text-lg">{title}</h3>
+                  <p className="text-sm leading-relaxed">{description}</p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                 </div>
               );
             })}
@@ -354,7 +389,11 @@ const ContactPage = () => {
       {/* Map Section */}
       <section className="py-16 md:py-24 bg-secondary/5">
         <div className="container mx-auto px-4 md:px-6">
+<<<<<<< HEAD
           <SubTitle className="text-primary mb-8 text-center">Our Location</SubTitle>
+=======
+          <h2 className="text-2xl font-bold text-dark mb-8 text-center">Our Location</h2>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           <div className="w-full h-96 rounded-lg border border-border flex items-center justify-center overflow-hidden">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13729.835190413354!2d87.26201523988661!3d26.66133852302847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6d001adcd50d%3A0x81e065f0034706e2!2sYouth%20IT!5e0!3m2!1sen!2snp!4v1763279910481!5m2!1sen!2snp"
@@ -370,10 +409,17 @@ const ContactPage = () => {
       {/* FAQ CTA */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
+<<<<<<< HEAD
           <Title className="text-primary mb-6">Have Questions?</Title>
           <ParagraphLarge className="text-muted-foreground mb-8 max-w-2xl mx-auto">
             Check our FAQ page for common questions and answers.
           </ParagraphLarge>
+=======
+          <h2 className="text-3xl font-bold text-dark mb-6">Have Questions?</h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Check our FAQ page for common questions and answers.
+          </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           <Button asChild variant="outline" size="lg">
             <a href="/faq">View FAQ</a>
           </Button>

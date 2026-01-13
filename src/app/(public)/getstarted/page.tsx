@@ -9,7 +9,10 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
 import { ArrowLeft } from "lucide-react";
+<<<<<<< HEAD
 import { Title, TitleSmall, SubTitle, Header, SubHeader, H4, Paragraph, ParagraphLarge, Small, Muted, Inline } from "@/components/ui/typography";
+=======
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
 
 interface FormData {
   name: string;
@@ -138,12 +141,21 @@ export default function SignupPage() {
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Link>
+<<<<<<< HEAD
           <Title className="text-primary mb-2">
             Get Started with Vaidhya Sewa
           </Title>
           <ParagraphLarge className="text-bluegray_500">
             Complete the form below to start your 30-day free trial
           </ParagraphLarge>
+=======
+          <h1 className="text-3xl md:text-4xl font-bold text-bluegray_900 mb-2">
+            Get Started with Vaidhya Sewa
+          </h1>
+          <p className="text-base md:text-lg text-bluegray_500">
+            Complete the form below to start your 30-day free trial
+          </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
         </div>
 
         {/* Form Card */}
@@ -309,7 +321,11 @@ export default function SignupPage() {
               <Button
                 type="submit"
                 disabled={loading}
+<<<<<<< HEAD
                 className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6 text-lg"
+=======
+                className="w-full bg-teal_700 hover:bg-teal_700/90 text-white_A700 font-semibold py-6 text-lg"
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
               >
                 {loading ? "Submitting..." : "Submit & Continue to Pricing"}
               </Button>
@@ -317,11 +333,19 @@ export default function SignupPage() {
 
             <p className="text-sm text-bluegray_500 text-center">
               By submitting this form, you agree to our{" "}
+<<<<<<< HEAD
               <Link href="/terms" className="text-primary hover:underline">
                 Terms of Service
               </Link>{" "}
               and{" "}
               <Link href="/privacy" className="text-primary hover:underline">
+=======
+              <Link href="/terms" className="text-teal_700 hover:underline">
+                Terms of Service
+              </Link>{" "}
+              and{" "}
+              <Link href="/privacy" className="text-teal_700 hover:underline">
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                 Privacy Policy
               </Link>
               .

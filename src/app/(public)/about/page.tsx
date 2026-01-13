@@ -1,9 +1,18 @@
 import { Metadata } from "next";
+<<<<<<< HEAD
 import Image from "next/image";
 import { User, Calendar, Stethoscope, DollarSign, Package, TestTube, Users, Shield, Phone, Eye, Leaf, Smartphone, TrendingUp } from "lucide-react";
 import CTA from "@/components/cta_section";
 import { Herosection } from "@/components/hero_section";
 import { SubTitle, Header, H4, Paragraph, ParagraphLarge, Small } from "@/components/ui/typography";
+=======
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { User, Calendar, Stethoscope, DollarSign, Package, TestTube, Users, Clock, Shield, Phone, Eye, Leaf, Smartphone, TrendingUp } from "lucide-react";
+import CTA from "@/components/cta_section";
+import { Herosection } from "@/components/hero_section";
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
 
 export const metadata: Metadata = {
   title: "About - Vaidhya Sewa",
@@ -11,7 +20,10 @@ export const metadata: Metadata = {
 };
 
 const HeroData = {
+<<<<<<< HEAD
   image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop",
+=======
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
   subtitle: "About Us",
   title: "About",
   title_2: "Vaidhya Sewa",
@@ -109,12 +121,21 @@ const WhyChooseCard = ({ item }: { item: { icon: any; description: string } }) =
   const IconComponent = item.icon;
   return (
     <div className="bg-bluegray_50 rounded-xl shadow-bs2 p-3 md:p-4 hover:shadow-lg transition-all group border border-transparent hover:border-teal_400/20">
+<<<<<<< HEAD
       <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-3 md:mb-4 group-hover:bg-primary/20 transition-colors">
         <IconComponent className="h-5 w-5 md:h-6 md:w-6 text-primary" />
       </div>
       <Small className="text-bluegray_500">
         {item.description}
       </Small>
+=======
+      <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-teal_50 flex items-center justify-center mb-3 md:mb-4 group-hover:bg-teal_100 transition-colors">
+        <IconComponent className="h-5 w-5 md:h-6 md:w-6 text-teal_700" />
+      </div>
+      <p className="text-xs md:text-sm text-bluegray_500 leading-tight">
+        {item.description}
+      </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
     </div>
   );
 };
@@ -130,6 +151,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
+<<<<<<< HEAD
               <SubTitle className="text-primary mb-4">Our Mission</SubTitle>
               <ParagraphLarge className="text-bluegray_500 mb-6">
                 To provide hospitals with total operational control through a unified platform that supports paperless processes, comprehensive patient medical histories, lab and radiology reports, integrated pharmacy management, financial reporting, and stock oversight—all within one seamless system.
@@ -146,6 +168,24 @@ export default function AboutPage() {
               <Paragraph className="text-bluegray_500">
                 We aim to create a future where hospitals operate with effortless efficiency, leveraging advanced analytics and mobile accessibility to drive growth, compliance, and unparalleled service excellence.
               </Paragraph>
+=======
+              <h2 className="text-3xl font-semibold text-bluegray_900 mb-4">Our Mission</h2>
+              <p className="text-base md:text-lg text-bluegray_500 mb-6 leading-relaxed">
+                To provide hospitals with total operational control through a unified platform that supports paperless processes, comprehensive patient medical histories, lab and radiology reports, integrated pharmacy management, financial reporting, and stock oversight—all within one seamless system.
+              </p>
+              <p className="text-bluegray_500 leading-relaxed">
+                By eliminating silos and automating routine tasks, we enable healthcare teams to focus on delivering exceptional care, ensuring every decision is informed by real-time, accurate data.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-3xl font-semibold text-bluegray_900 mb-4">Our Vision</h2>
+              <p className="text-base md:text-lg text-bluegray_500 mb-6 leading-relaxed">
+                To pioneer a paperless healthcare ecosystem across South Asia, where our scalable solution empowers institutions of all sizes with seamless integration of reception, appointments, doctor consultations, billing, and specialized modules like pharmacy and diagnostics for transformative patient outcomes.
+              </p>
+              <p className="text-bluegray_500 leading-relaxed">
+                We aim to create a future where hospitals operate with effortless efficiency, leveraging advanced analytics and mobile accessibility to drive growth, compliance, and unparalleled service excellence.
+              </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
             </div>
           </div>
         </div>
@@ -155,21 +195,36 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 bg-white_A700">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
+<<<<<<< HEAD
             <SubTitle className="text-primary mb-4">Our Integrated Hospital Platform</SubTitle>
             <ParagraphLarge className="text-bluegray_500 max-w-3xl mx-auto">
               Experience total hospital control with Vaidhya Sewa: a responsive, cloud-based solution that integrates every essential function into one secure, paperless environment.
             </ParagraphLarge>
+=======
+            <h2 className="text-3xl font-semibold text-bluegray_900 mb-4">Our Integrated Hospital Platform</h2>
+            <p className="text-base md:text-lg text-bluegray_500 max-w-3xl mx-auto">
+              Experience total hospital control with Vaidhya Sewa: a responsive, cloud-based solution that integrates every essential function into one secure, paperless environment.
+            </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {features.map((feature, idx) => {
               const IconComponent = feature.icon;
               return (
                 <div key={idx} className="bg-white_A700 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-teal_100 hover:border-teal_300 text-center group">
+<<<<<<< HEAD
                   <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/90 transition-colors duration-300">
                     <IconComponent className="w-8 h-8 text-primary-foreground opacity-90 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <Header className="text-primary mb-3">{feature.title}</Header>
                   <Paragraph className="text-bluegray_500">{feature.description}</Paragraph>
+=======
+                  <div className="w-16 h-16 bg-teal_700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-teal_800 transition-colors duration-300">
+                    <IconComponent className="w-8 h-8 text-white_A700 opacity-90 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-bluegray_900 mb-3">{feature.title}</h3>
+                  <p className="text-bluegray_500 leading-relaxed text-sm md:text-base">{feature.description}</p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
                 </div>
               );
             })}
@@ -181,6 +236,7 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 bg-bluegray_50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
+<<<<<<< HEAD
             <SubTitle className="text-primary mb-4">Our Core Values</SubTitle>
             <ParagraphLarge className="text-bluegray_500 max-w-2xl mx-auto">
               The guiding principles that define our commitment to innovative, reliable healthcare solutions
@@ -191,6 +247,18 @@ export default function AboutPage() {
               <div key={idx} className="bg-white_A700 rounded-lg p-6 hover:bg-primary/5 transition-colors border-l-4 border-primary">
                 <H4 className="text-primary mb-3">{value.title}</H4>
                 <Paragraph className="text-bluegray_500">{value.description}</Paragraph>
+=======
+            <h2 className="text-3xl font-semibold text-bluegray_900 mb-4">Our Core Values</h2>
+            <p className="text-base md:text-lg text-bluegray_500 max-w-2xl mx-auto">
+              The guiding principles that define our commitment to innovative, reliable healthcare solutions
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((value, idx) => (
+              <div key={idx} className="bg-white_A700 rounded-lg p-6 hover:bg-teal_50 transition-colors border-l-4 border-teal_700">
+                <h3 className="text-lg font-semibold text-bluegray_900 mb-3">{value.title}</h3>
+                <p className="text-bluegray_500 leading-relaxed text-sm md:text-base">{value.description}</p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
               </div>
             ))}
           </div>
@@ -201,10 +269,17 @@ export default function AboutPage() {
       <section className="relative py-20 md:py-28 bg-white_A700 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
+<<<<<<< HEAD
             <SubTitle className="text-primary mb-4">Why Choose Vaidhya Sewa?</SubTitle>
             <ParagraphLarge className="text-bluegray_500 max-w-2xl mx-auto">
               Trusted by leading hospitals to transform operations through our comprehensive, integrated platform.
             </ParagraphLarge>
+=======
+            <h2 className="text-3xl font-semibold text-bluegray_900 mb-4">Why Choose Vaidhya Sewa?</h2>
+            <p className="text-base md:text-lg text-bluegray_500 max-w-2xl mx-auto">
+              Trusted by leading hospitals to transform operations through our comprehensive, integrated platform.
+            </p>
+>>>>>>> 030d0ce8e34eb3421922967b2c849bfe0d9580a6
           </div>
 
           {/* Top 3 cards */}
